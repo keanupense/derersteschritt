@@ -1,129 +1,433 @@
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
+/* ---------- Reset & Basics ---------- */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f4f5fb;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   color: #111827;
-  line-height: 1.6;
+  background: #f3f4f6; /* helles, sauberes Grau statt Beige */
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Container ---------- */
 
 .container {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
 }
 
-/* Header */
+/* ---------- Header / Navigation ---------- */
+
 .site-header {
-  background: #111827;
-  color: #f9fafb;
-  padding: 1.5rem 0;
-  margin-bottom: 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.9rem 0;
 }
 
-.site-header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
-.site-header p {
-  opacity: 0.9;
-  margin-bottom: 1rem;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-mark {
+  font-size: 1.2rem;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
 .main-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.main-nav a {
-  color: #e5e7eb;
-  text-decoration: none;
+  gap: 1.5rem;
   font-size: 0.95rem;
 }
 
+.main-nav a {
+  color: #374151;
+  position: relative;
+  padding-bottom: 0.1rem;
+}
+
 .main-nav a:hover {
-  text-decoration: underline;
+  color: #111827;
 }
 
-/* Hero */
-.hero {
-  background: #ffffff;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-}
-
-.hero h2 {
-  font-size: 1.6rem;
-  margin-bottom: 0.75rem;
-}
-
-.hero p {
-  margin-bottom: 1rem;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
+.main-nav a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
   border-radius: 999px;
-  text-decoration: none;
+  background: #111827;
+}
+
+/* ---------- Landing Hero (grüner Bereich) ---------- */
+
+.landing-hero {
+  background: #2f9485; /* türkises Grün wie Bubble */
+  color: #fdfaf5;
+  padding: 4.5rem 0 4.8rem;
+}
+
+.hero-inner {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.landing-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3rem;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin: 0 0 1.1rem;
+}
+
+.hero-subtitle {
+  margin: 0 auto 2.3rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 44rem;
+}
+
+/* ---------- Buttons im Hero / generell ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.7rem;
+  border-radius: 0.6rem;
+  font-size: 0.98rem;
   font-weight: 500;
-  border: 1px solid transparent;
+  cursor: pointer;
+  border: 1.5px solid #111827;
+  background: #ffffff; /* weiße Box */
+  color: #111827; /* schwarze Schrift */
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease,
+    color 0.12s ease;
 }
 
-.btn.primary {
-  background: #2563eb;
-  color: #f9fafb;
-}
-
-.btn.primary:hover {
-  background: #1d4ed8;
-}
-
-/* Info cards */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.hero-buttons {
+  display: inline-flex;
   gap: 1rem;
 }
 
-.info-grid article {
-  background: #ffffff;
-  border-radius: 0.75rem;
-  padding: 1rem;
-  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.05);
+.btn-filled {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
 }
 
-.info-grid h3 {
+.btn-filled:hover {
+  background: #020617;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
+}
+
+.btn-outline:hover {
+  background: rgba(17, 24, 39, 0.06);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.25);
+}
+
+/* ---------- Support-Section (Unterstützung finden in Berlin) ---------- */
+
+.support-section {
+  background: #ffffff; /* komplett weiß, clean */
+  padding: 3.5rem 0 4rem;
+}
+
+.support-section h2,
+.support-section h1 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin: 0 0 0.5rem;
+}
+
+.support-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.3rem;
+  font-size: 0.98rem;
+  color: #4b5563;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.support-card {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.4rem 1.4rem 1.5rem;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+}
+
+.support-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.support-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+/* ---------- So funktioniert es ---------- */
+
+.steps-section {
+  background: #f9fafb; /* ganz leichtes Grau, wirkt ruhig & clean */
+  padding: 3.5rem 0 3.8rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.steps-section h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin: 0 0 2rem;
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 720px;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.step-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: #2f9485;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+}
+
+.step-content h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.step-content p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+/* ---------- Kennst du ein Angebot, das fehlt? ---------- */
+
+.contribute-section {
+  background: #e4f3ef; /* subtilere, helle Grün-Nuance */
+  padding: 3.2rem 0 3.4rem;
+}
+
+.contribute-inner {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contribute-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.contribute-inner h2 {
+  font-size: 1.8rem;
+  margin: 0 0 0.6rem;
+}
+
+.contribute-inner p {
+  font-size: 0.98rem;
+  color: #374151;
+  margin: 0 0 1.4rem;
+}
+
+/* ---------- Spenden-Teaser ---------- */
+
+.donate-teaser {
+  background: #ffffff; /* weiß, Fokus auf Text + Button */
+  padding: 3rem 0 3.4rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.donate-teaser h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 0 0 0.6rem;
+}
+
+.donate-teaser p {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 1.4rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.donate-teaser .btn-wrapper {
+  text-align: center;
+}
+
+/* ---------- Browse-Seite: Filter & Gruppen ---------- */
+
+main {
+  /* Platzhalter – Landing hat eigene Farben, Unterseiten nutzen Sections */
+}
+
+.filters {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.09);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.filters label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.filters select {
+  display: block;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font: inherit;
+}
+
+.group-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.group-card {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.25rem 1.35rem 1.4rem;
+  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.09);
+}
+
+.group-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.group-card p {
+  margin: 0.12rem 0;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.group-card p strong {
+  color: #111827;
+}
+
+.group-card a {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: #2563eb;
+}
+
+/* ---------- Forms & Inputs (Suggestion etc.) ---------- */
+
+main h2 {
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
 
-/* Footer */
-.site-footer {
-  margin-top: 2rem;
-  padding: 1rem 0;
-  font-size: 0.85rem;
+.page-intro {
+  margin-bottom: 1.25rem;
   color: #4b5563;
+  max-width: 640px;
 }
+
+form.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form.hero label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
 input[type="text"],
 textarea,
 select {
   width: 100%;
   max-width: 100%;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   border: 1px solid #e5e7eb;
   font: inherit;
   margin-top: 0.25rem;
+  background: #f9fafb;
 }
 
 input[type="text"]:focus,
@@ -132,4 +436,64 @@ select:focus {
   outline: none;
   border-color: #2563eb;
   box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+  background: #ffffff;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ---------- About / Spenden ---------- */
+
+.info-box {
+  margin-top: 1.5rem;
+  background: #f1e9dd;
+  border-radius: 1.2rem;
+  padding: 1.25rem 1.4rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  padding: 2rem 0 2.5rem;
+  font-size: 0.82rem;
+  color: #6b7280;
+  text-align: center;
+  background: #f3f4f6; /* gleich wie Body, wirkt wie ruhiger Abschluss */
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .landing-hero {
+    padding: 3.5rem 0 3.8rem;
+  }
+
+  .landing-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .group-list {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-list {
+    grid-template-columns: 1fr;
+  }
 }

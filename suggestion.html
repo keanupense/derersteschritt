@@ -7,78 +7,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <h1>Der erste Schritt</h1>
-        <p>Finde anonyme Hilfegruppen für Sucht & psychische Gesundheit in Berlin.</p>
-        <nav class="main-nav">
-          <a href="index.html">Start</a>
-          <a href="browse.html">Gruppen finden</a>
-          <a href="suggestion.html">Gruppe vorschlagen</a>
-          <a href="about_support.html">Über & Spenden</a>
-        </nav>
-      </div>
-    </header>
+   <header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">Der erste Schritt</span>
+    </div>
+    <nav class="main-nav">
+      <a href="spenden.html">Jetzt spenden</a>
+      <a href="index.html">Startseite</a>
+      <a href="browse.html">Angebote finden</a>
+      <a href="suggestion.html">Gruppe vorschlagen</a>
+      <a href="about_support.html">Über uns</a>
+    </nav>
+  </div>
+</header>
 
-    <main class="container">
-      <h2>Neue Gruppe vorschlagen</h2>
-      <p>
-        Du kennst eine Selbsthilfegruppe, die hier noch fehlt? Trag die Infos ein und schick sie ab.
-        Deine Angaben werden nur genutzt, um die Gruppe zu prüfen und ggf. auf dieser Seite zu ergänzen.
-      </p>
+    <main>
+      <section class="support-section">
+        <div class="container">
+          <h1>Neue Gruppe vorschlagen</h1>
+          <p class="support-subtitle">
+            Sie kennen eine Selbsthilfegruppe oder Beratungsstelle in Berlin, die hier noch fehlt?
+            Tragen Sie die Infos ein und schicken Sie sie ab. Die Angaben werden nur genutzt, um die
+            Gruppe zu prüfen und ggf. in dieses Verzeichnis aufzunehmen.
+          </p>
 
-      <form
-        class="hero"
-        action="mailto:kontakt@dererste-schritt.de"
-        method="post"
-        enctype="text/plain"
-      >
-        <label>
-          Name der Gruppe<br />
-          <input type="text" name="name" required />
-        </label>
-        <br /><br />
+          <form
+            class="hero"
+            action="mailto:kontakt@dererste-schritt.de"
+            method="post"
+            enctype="text/plain"
+          >
+            <label>
+              Name der Gruppe<br />
+              <input type="text" name="name" required />
+            </label>
 
-        <label>
-          Thema / Fokus<br />
-          <input type="text" name="focus" placeholder="z. B. Alkoholsucht, Depression, Angehörige" required />
-        </label>
-        <br /><br />
+            <label>
+              Thema / Fokus<br />
+              <input
+                type="text"
+                name="focus"
+                placeholder="z. B. Alkoholsucht, Depression, Angehörige"
+                required
+              />
+            </label>
 
-        <label>
-          Bezirk<br />
-          <input type="text" name="district" placeholder="z. B. Kreuzberg, Mitte" />
-        </label>
-        <br /><br />
+            <label>
+              Bezirk<br />
+              <input type="text" name="district" placeholder="z. B. Neukölln" required />
+            </label>
 
-        <label>
-          Treffpunkt / Adresse<br />
-          <input type="text" name="address" />
-        </label>
-        <br /><br />
+            <label>
+              Treffpunkt / Adresse<br />
+              <input
+                type="text"
+                name="address"
+                placeholder="Straße, Hausnummer, ggf. Ortsteil"
+                required
+              />
+            </label>
 
-        <label>
-          Website / Kontakt der Gruppe<br />
-          <input type="text" name="contact" placeholder="Website, E-Mail oder Telefonnummer" />
-        </label>
-        <br /><br />
+            <label>
+              Regelmäßiger Termin<br />
+              <input
+                type="text"
+                name="time"
+                placeholder="z. B. jeden Dienstag, 19:00 Uhr"
+                required
+              />
+            </label>
 
-        <label>
-          Weitere Infos<br />
-          <textarea name="details" rows="4" placeholder="Was sollte man sonst wissen?"></textarea>
-        </label>
-        <br /><br />
+            <label>
+              Kontaktmöglichkeiten<br />
+              <textarea
+                name="contact"
+                placeholder="E-Mail, Telefon oder Website – alles, was für die Kontaktaufnahme wichtig ist."
+                required
+              ></textarea>
+            </label>
 
-        <button class="btn primary" type="submit">Vorschlag senden</button>
-      </form>
+            <label>
+              Weitere Hinweise (optional)<br />
+              <textarea
+                name="notes"
+                placeholder="z. B. für wen die Gruppe gedacht ist, Sprachen, Barrierefreiheit …"
+              ></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-outline">Vorschlag senden</button>
+          </form>
+
+          <p style="margin-top: 1.25rem; font-size: 0.82rem; color: #6b7280;">
+            Mit dem Absenden wird eine E-Mail an <strong>kontakt@dererste-schritt.de</strong>
+            erstellt. Es werden keine Daten in dieser Website gespeichert.
+          </p>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Der erste Schritt</p>
+      <div class="container footer-top">
+        <div class="footer-col footer-col-main">
+          <h3>Der erste Schritt</h3>
+          <p>
+            Ein öffentliches Verzeichnis für Selbsthilfegruppen und Beratungsangebote zu Sucht und
+            psychischer Gesundheit in Berlin.
+          </p>
+
+          <h4>Unterstützen</h4>
+          <p>Helfen Sie uns, dieses Projekt zu erhalten und auszubauen.</p>
+          <a href="about_support.html" class="footer-link">Jetzt spenden</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="browse.html">Angebote finden</a></li>
+            <li><a href="suggestion.html">Gruppe vorschlagen</a></li>
+            <li><a href="about_support.html">Über uns &amp; Unterstützen</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutzerklärung</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2025 Der erste Schritt. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
-
-    <script src="js/app.js"></script>
   </body>
 </html>

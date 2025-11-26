@@ -2,110 +2,122 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Gruppen finden – Der erste Schritt</title>
+    <title>Angebote finden – Der erste Schritt</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container">
-        <h1>Der erste Schritt</h1>
-        <p>Finde anonyme Hilfegruppen für Sucht & psychische Gesundheit in Berlin.</p>
-        <nav class="main-nav">
-          <a href="index.html">Start</a>
-          <a href="browse.html">Gruppen finden</a>
-          <a href="suggestion.html">Gruppe vorschlagen</a>
-          <a href="about_support.html">Über & Spenden</a>
-        </nav>
-      </div>
-    </header>
+   <header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">Der erste Schritt</span>
+    </div>
+    <nav class="main-nav">
+      <a href="spenden.html">Jetzt spenden</a>
+      <a href="index.html">Startseite</a>
+      <a href="browse.html">Angebote finden</a>
+      <a href="suggestion.html">Gruppe vorschlagen</a>
+      <a href="about_support.html">Über uns</a>
+    </nav>
+  </div>
+</header>
 
-    <main class="container">
-      <h2>Gruppen in Berlin finden</h2>
-      <p>Nutze die Filter, um passende Gruppen zu finden. Alle Angaben ohne Gewähr.</p>
+    <main>
+      <section class="support-section">
+        <div class="container">
+          <h1>Gruppen in Berlin finden</h1>
+          <p class="support-subtitle">
+            Nutze die Filter, um passende Selbsthilfegruppen und Beratungsangebote zu finden.
+            Alle Angaben ohne Gewähr – bitte prüfe Termine und Kontaktdaten direkt bei der
+            jeweiligen Gruppe oder Stelle.
+          </p>
 
-      <section class="hero" style="margin-top: 1rem; margin-bottom: 1.5rem;">
-        <div class="filters" style="display: flex; flex-wrap: wrap; gap: 1rem;">
-          <label>
-            Thema<br />
-            <select id="filter-topic">
-              <option value="">Alle</option>
-              <option value="sucht">Sucht</option>
-              <option value="psychisch">Psychische Gesundheit</option>
-            </select>
-          </label>
+          <!-- Filter-Box -->
+          <div class="filters">
+            <div>
+              <label for="topic-filter">Thema</label>
+              <select id="topic-filter">
+                <option value="alle">Alle</option>
+                <option value="sucht">Sucht</option>
+                <option value="depression">Depression</option>
+                <option value="angst">Angst</option>
+                <option value="angehoerige">Angehörige</option>
+                <option value="sonstiges">Sonstiges</option>
+              </select>
+            </div>
 
-          <label>
-            Bezirk<br />
-            <select id="filter-district">
-              <option value="">Alle</option>
-              <option value="Kreuzberg">Kreuzberg</option>
-              <option value="Mitte">Mitte</option>
-              <!-- Später alle Bezirke ergänzen -->
-            </select>
-          </label>
+            <div>
+              <label for="district-filter">Bezirk</label>
+              <select id="district-filter">
+                <option value="alle">Alle</option>
+                <option value="mitte">Mitte</option>
+                <option value="friedrichshain-kreuzberg">Friedrichshain-Kreuzberg</option>
+                <option value="pankow">Pankow</option>
+                <option value="charlottenburg-wilmersdorf">Charlottenburg-Wilmersdorf</option>
+                <option value="spandau">Spandau</option>
+                <option value="steglitz-zehlendorf">Steglitz-Zehlendorf</option>
+                <option value="tempelhof-schoeneberg">Tempelhof-Schöneberg</option>
+                <option value="neukoelln">Neukölln</option>
+                <option value="treptow-koepenick">Treptow-Köpenick</option>
+                <option value="marzahn-hellersdorf">Marzahn-Hellersdorf</option>
+                <option value="lichtenberg">Lichtenberg</option>
+                <option value="reinickendorf">Reinickendorf</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Ergebnisliste – wird per JS gefüllt -->
+          <div id="group-list" class="group-list"></div>
+
+          <p style="margin-top: 1.5rem; font-size: 0.82rem; color: #6b7280;">
+            Hinweis: Dieses Verzeichnis erhebt keinen Anspruch auf Vollständigkeit. Wenn Sie eine
+            Gruppe kennen, die fehlt, können Sie sie über „Gruppe vorschlagen“ eintragen.
+          </p>
         </div>
-      </section>
-
-      <section id="group-list" class="info-grid">
-        <!-- JavaScript rendert hier die Gruppen -->
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Der erste Schritt</p>
+      <div class="container footer-top">
+        <div class="footer-col footer-col-main">
+          <h3>Der erste Schritt</h3>
+          <p>
+            Ein öffentliches Verzeichnis für Selbsthilfegruppen und Beratungsangebote zu Sucht und
+            psychischer Gesundheit in Berlin.
+          </p>
+
+          <h4>Unterstützen</h4>
+          <p>Helfen Sie uns, dieses Projekt zu erhalten und auszubauen.</p>
+          <a href="about_support.html" class="footer-link">Jetzt spenden</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="browse.html">Angebote finden</a></li>
+            <li><a href="suggestion.html">Gruppe vorschlagen</a></li>
+            <li><a href="about_support.html">Über uns &amp; Unterstützen</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutzerklärung</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© 2025 Der erste Schritt. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
 
-    <!-- Reihenfolge wichtig: zuerst Daten, dann allgemeines JS, dann Seite-spezifisches Script -->
+    <!-- Daten + Logik für die Gruppen -->
     <script src="data/groups.js"></script>
-    <script src="js/app.js"></script>
-    <script>
-      const listEl = document.getElementById("group-list");
-      const topicEl = document.getElementById("filter-topic");
-      const districtEl = document.getElementById("filter-district");
-
-      function renderGroups() {
-        const topic = topicEl.value;
-        const district = districtEl.value;
-
-        const filtered = GROUPS.filter((g) => {
-          const matchTopic = topic ? g.type === topic : true;
-          const matchDistrict = district ? g.district === district : true;
-          return matchTopic && matchDistrict;
-        });
-
-        if (filtered.length === 0) {
-          listEl.innerHTML = "<p>Keine Gruppen gefunden. Bitte Filter anpassen.</p>";
-          return;
-        }
-
-        listEl.innerHTML = filtered
-          .map(
-            (g) => `
-          <article>
-            <h3>${g.name}</h3>
-            <p><strong>Thema:</strong> ${g.focus}</p>
-            <p><strong>Bezirk:</strong> ${g.district}</p>
-            <p><strong>Termin:</strong> ${g.weekday}, ${g.time} Uhr</p>
-            <p><strong>Adresse:</strong> ${g.address}</p>
-            ${
-              g.link
-                ? `<p><a href="${g.link}" target="_blank" rel="noopener noreferrer">Mehr Infos</a></p>`
-                : ""
-            }
-          </article>
-        `
-          )
-          .join("");
-      }
-
-      topicEl.addEventListener("change", renderGroups);
-      districtEl.addEventListener("change", renderGroups);
-
-      // Beim ersten Laden direkt anzeigen
-      renderGroups();
-    </script>
+    <script src="js/groups.js"></script>
   </body>
 </html>

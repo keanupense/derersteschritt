@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gruppe vorschlagen – Der erste Schritt</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Der erste Schritt</h1>
+        <p>Finde anonyme Hilfegruppen für Sucht & psychische Gesundheit in Berlin.</p>
+        <nav class="main-nav">
+          <a href="index.html">Start</a>
+          <a href="browse.html">Gruppen finden</a>
+          <a href="suggestion.html">Gruppe vorschlagen</a>
+          <a href="about_support.html">Über & Spenden</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Neue Gruppe vorschlagen</h2>
+      <p>
+        Du kennst eine Selbsthilfegruppe, die hier noch fehlt? Trag die Infos ein und schick sie ab.
+        Deine Angaben werden nur genutzt, um die Gruppe zu prüfen und ggf. auf dieser Seite zu ergänzen.
+      </p>
+
+      <form
+        class="hero"
+        action="mailto:kontakt@dererste-schritt.de"
+        method="post"
+        enctype="text/plain"
+      >
+        <label>
+          Name der Gruppe<br />
+          <input type="text" name="name" required />
+        </label>
+        <br /><br />
+
+        <label>
+          Thema / Fokus<br />
+          <input type="text" name="focus" placeholder="z. B. Alkoholsucht, Depression, Angehörige" required />
+        </label>
+        <br /><br />
+
+        <label>
+          Bezirk<br />
+          <input type="text" name="district" placeholder="z. B. Kreuzberg, Mitte" />
+        </label>
+        <br /><br />
+
+        <label>
+          Treffpunkt / Adresse<br />
+          <input type="text" name="address" />
+        </label>
+        <br /><br />
+
+        <label>
+          Website / Kontakt der Gruppe<br />
+          <input type="text" name="contact" placeholder="Website, E-Mail oder Telefonnummer" />
+        </label>
+        <br /><br />
+
+        <label>
+          Weitere Infos<br />
+          <textarea name="details" rows="4" placeholder="Was sollte man sonst wissen?"></textarea>
+        </label>
+        <br /><br />
+
+        <button class="btn primary" type="submit">Vorschlag senden</button>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Der erste Schritt</p>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

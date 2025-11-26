@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gruppen finden – Der erste Schritt</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Der erste Schritt</h1>
+        <p>Finde anonyme Hilfegruppen für Sucht & psychische Gesundheit in Berlin.</p>
+        <nav class="main-nav">
+          <a href="index.html">Start</a>
+          <a href="browse.html">Gruppen finden</a>
+          <a href="suggestion.html">Gruppe vorschlagen</a>
+          <a href="about_support.html">Über & Spenden</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Gruppen in Berlin finden</h2>
+      <p>Nutze die Filter, um passende Gruppen zu finden. Alle Angaben ohne Gewähr.</p>
+
+      <section class="hero" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        <div class="filters" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+          <label>
+            Thema<br />
+            <select id="filter-topic">
+              <option value="">Alle</option>
+              <option value="sucht">Sucht</option>
+              <option value="psychisch">Psychische Gesundheit</option>
+            </select>
+          </label>
+
+          <label>
+            Bezirk<br />
+            <select id="filter-district">
+              <option value="">Alle</option>
+              <option value="Kreuzberg">Kreuzberg</option>
+              <option value="Mitte">Mitte</option>
+              <!-- Später alle Bezirke ergänzen -->
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section id="group-list" class="info-grid">
+        <!-- JavaScript rendert hier die Gruppen -->
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Der erste Schritt</p>
+      </div>
+    </footer>
+
+    <!-- Reihenfolge wichtig: zuerst Daten, dann allgemeines JS, dann Seite-spezifisches Script -->
+    <script src="data/groups.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      const listEl = document.getElementById("group-list");
+      const topicEl = document.getElementById("filter-topic");
+      const districtEl = document.getElementById("filter-district");
+
+      function renderGroups() {
+        const topic = topicEl.value;
+        const district = districtEl.value;
+
+        const filtered = GROUPS.filter((g) => {
+          const matchTopic = topic ? g.type === topic : true;
+          const matchDistrict = district ? g.district === district : true;
+          return matchTopic && matchDistrict;
+        });
+
+        if (filtered.length === 0) {
+          listEl.innerHTML = "<p>Keine Gruppen gefunden. Bitte Filter anpassen.</p>";
+          return;
+        }
+
+        listEl.innerHTML = filtered
+          .map(
+            (g) => `
+          <article>
+            <h3>${g.name}</h3>
+            <p><strong>Thema:</strong> ${g.focus}</p>
+            <p><strong>Bezirk:</strong> ${g.district}</p>
+            <p><strong>Termin:</strong> ${g.weekday}, ${g.time} Uhr</p>
+            <p><strong>Adresse:</strong> ${g.address}</p>
+            ${
+              g.link
+                ? `<p><a href="${g.link}" target="_blank" rel="noopener noreferrer">Mehr Infos</a></p>`
+                : ""
+            }
+          </article>
+        `
+          )
+          .join("");
+      }
+
+      topicEl.addEventListener("change", renderGroups);
+      districtEl.addEventListener("change", renderGroups);
+
+      // Beim ersten Laden direkt anzeigen
+      renderGroups();
+    </script>
+  </body>
+</html>

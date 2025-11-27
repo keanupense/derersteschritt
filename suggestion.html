@@ -41,27 +41,18 @@
             <h2>Neue Gruppe vorschlagen</h2>
             <p class="page-intro">
               Fülle die Felder so gut du kannst aus. Wenn du etwas nicht weißt, lass es einfach frei.
-              Beim Absenden öffnet sich dein Mailprogramm und erstellt eine E-Mail mit allen Angaben.
+              Beim Klick auf den Button wird der Text in dein Mailprogramm kopiert.
             </p>
 
-            <form
-              class="hero"
-              action="mailto:kontakt@dererste-schritt.de?subject=Vorschlag%20einer%20neuen%20Gruppe%20fuer%20das%20Verzeichnis"
-              method="post"
-              enctype="text/plain"
-            >
+            <form class="hero" id="suggestionForm">
               <label>
-                Name der Gruppe oder Einrichtung *
-                <input
-                  type="text"
-                  name="Name_der_Gruppe" placeholder="z.&nbsp;B. AA Kreuzberg oder Depressionsgruppe Mitte"
-                  required
-                />
+                Name der Gruppe oder Einrichtung
+                <input type="text" id="groupName" placeholder="z.&nbsp;B. AA Kreuzberg" />
               </label>
 
               <label>
-                Thema *
-                <select name="Thema" required>
+                Thema
+                <select id="groupTopic">
                   <option value="">Bitte auswählen …</option>
                   <option>Alkoholsucht</option>
                   <option>Cannabis</option>
@@ -77,77 +68,24 @@
               </label>
 
               <label>
-                Bezirk *
-                <select name="Bezirk" required>
-                  <option value="">Bitte Bezirk wählen …</option>
-                  <option>Charlottenburg-Wilmersdorf</option>
-                  <option>Friedrichshain-Kreuzberg</option>
-                  <option>Lichtenberg</option>
-                  <option>Marzahn-Hellersdorf</option>
-                  <option>Mitte</option>
-                  <option>Neukölln</option>
-                  <option>Pankow</option>
-                  <option>Reinickendorf</option>
-                  <option>Spandau</option>
-                  <option>Steglitz-Zehlendorf</option>
-                  <option>Tempelhof-Schöneberg</option>
-                  <option>Treptow-Köpenick</option>
-                  <option>Online</option> </select>
-              </label>
-
-              <label>
-                Treffpunkt / Adresse
-                <input
-                  type="text"
-                  name="Adresse" placeholder="z.&nbsp;B. Name des Hauses, Straße, Ort oder 'Online'"
-                />
-              </label>
-
-              <label>
-                Kurzbeschreibung
+                Alle weiteren Angaben
                 <textarea
-                  name="Beschreibung" placeholder="Worum geht es in der Gruppe? Wer kann teilnehmen? Wie läuft ein Treffen ab?"
-                ></textarea>
-              </label>
-
-              <label>
-                Kontaktmöglichkeit zur Gruppe
-                <textarea
-                  name="Kontakt_Gruppe" placeholder="z.&nbsp;B. E-Mail-Adresse, Telefonnummer oder Website der Gruppe/Beratungsstelle"
-                ></textarea>
-              </label>
-
-              <label>
-                Deine Rolle (optional)
-                <select name="Rolle_des_Vorschlagenden"> <option value="">Keine Angabe</option>
-                  <option>Betroffene Person</option>
-                  <option>Angehörige:r / Freund:in</option>
-                  <option>Fachperson / Organisation</option>
-                  <option>Sonstiges</option>
-                </select>
-              </label>
-
-              <label>
-                Hinweise an uns (optional)
-                <textarea
-                  name="Hinweise_an_uns" placeholder="Alles, was für die Prüfung des Angebots noch wichtig ist."
+                  id="additionalInfo"
+                  rows="10"
+                  placeholder="Bezirk:&#10;Adresse:&#10;Kurzbeschreibung:&#10;Kontakt zur Gruppe:&#10;Deine Rolle:"
                 ></textarea>
               </label>
 
               <p class="form-hint-email">
-                Wenn du auf „Gruppe per E-Mail vorschlagen“ klickst, öffnet sich dein Mailprogramm mit
-                einer fertig ausgefüllten Nachricht. Du kannst den Text noch einmal prüfen und dann
-                selbst verschicken.
+                Klicke auf den Button, um die Informationen direkt in eine neue E-Mail zu übernehmen.
               </p>
 
-              <button type="submit" class="btn btn-filled">
+              <a href="#" id="mailToLink" class="btn btn-filled">
                 Gruppe per E-Mail vorschlagen
-              </button>
+              </a>
 
               <p class="form-note">
                 Mit dem Absenden erklärst du, dass du die Angaben nach bestem Wissen gemacht hast.
-                Es werden keine Logins oder Tracker verwendet. Die Daten werden nur genutzt,
-                um das Verzeichnis zu aktualisieren.
               </p>
             </form>
           </div>
@@ -155,7 +93,35 @@
       </section>
     </main>
 
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const link = document.getElementById('mailToLink');
 
+        // Funktion, die den Mailto-Link bei jedem Klick neu generiert
+        link.addEventListener('click', (e) => {
+          e.preventDefault(); // Verhindert, dass der Link direkt springt
+
+          const name = document.getElementById('groupName').value.trim();
+          const topic = document.getElementById('groupTopic').value;
+          const info = document.getElementById('additionalInfo').value.trim();
+
+          const mailToAddress = 'kontakt@dererste-schritt.de';
+          const subject = encodeURIComponent('Vorschlag einer neuen Gruppe: ' + (name || 'Unbekannter Name'));
+          
+          let body = 'Hier ist der Vorschlag für eine neue Gruppe:\n\n';
+          body += `Name der Gruppe: ${name || '— keine Angabe —'}\n`;
+          body += `Thema: ${topic || '— keine Angabe —'}\n`;
+          body += `\nWeitere Details:\n`;
+          body += (info || '— keine weiteren Details —');
+
+          const mailtoURI = `mailto:${mailToAddress}?subject=${subject}&body=${encodeURIComponent(body)}`;
+
+          // Öffnet das Mailprogramm mit den generierten Daten
+          window.location.href = mailtoURI;
+        });
+      });
+    </script>
+    
     <footer class="site-footer">
       <div class="footer-top">
         <div class="container footer-grid">

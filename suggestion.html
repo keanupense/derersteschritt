@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <!-- Header wie auf allen Seiten -->
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
@@ -24,8 +23,7 @@
       </div>
     </header>
 
-           <main>
-      <!-- Hero-Bereich oben, wie auf den anderen Seiten -->
+    <main>
       <section class="suggest-hero">
         <div class="container suggest-hero-inner">
           <h1>Schlag eine Gruppe oder Beratung vor</h1>
@@ -37,7 +35,6 @@
         </div>
       </section>
 
-      <!-- Grauer Bereich mit weißer Formular-Card -->
       <section class="suggest-section">
         <div class="container">
           <div class="suggest-card">
@@ -49,7 +46,7 @@
 
             <form
               class="hero"
-              action="mailto:kontakt@dererste-schritt.de"
+              action="mailto:kontakt@dererste-schritt.de?subject=Vorschlag%20einer%20neuen%20Gruppe%20fuer%20das%20Verzeichnis"
               method="post"
               enctype="text/plain"
             >
@@ -57,8 +54,7 @@
                 Name der Gruppe oder Einrichtung *
                 <input
                   type="text"
-                  name="Gruppenname"
-                  placeholder="z.&nbsp;B. AA Kreuzberg oder Depressionsgruppe Mitte"
+                  name="Name_der_Gruppe" placeholder="z.&nbsp;B. AA Kreuzberg oder Depressionsgruppe Mitte"
                   required
                 />
               </label>
@@ -96,38 +92,34 @@
                   <option>Steglitz-Zehlendorf</option>
                   <option>Tempelhof-Schöneberg</option>
                   <option>Treptow-Köpenick</option>
-                </select>
+                  <option>Online</option> </select>
               </label>
 
               <label>
                 Treffpunkt / Adresse
                 <input
                   type="text"
-                  name="Treffpunkt_oder_Adresse"
-                  placeholder="z.&nbsp;B. Name des Hauses, Straße, Ort"
+                  name="Adresse" placeholder="z.&nbsp;B. Name des Hauses, Straße, Ort oder 'Online'"
                 />
               </label>
 
               <label>
                 Kurzbeschreibung
                 <textarea
-                  name="Kurzbeschreibung"
-                  placeholder="Worum geht es in der Gruppe? Wer kann teilnehmen? Wie läuft ein Treffen ab?"
+                  name="Beschreibung" placeholder="Worum geht es in der Gruppe? Wer kann teilnehmen? Wie läuft ein Treffen ab?"
                 ></textarea>
               </label>
 
               <label>
                 Kontaktmöglichkeit zur Gruppe
                 <textarea
-                  name="Kontakt"
-                  placeholder="z.&nbsp;B. E-Mail-Adresse, Telefonnummer oder Website der Gruppe/Beratungsstelle"
+                  name="Kontakt_Gruppe" placeholder="z.&nbsp;B. E-Mail-Adresse, Telefonnummer oder Website der Gruppe/Beratungsstelle"
                 ></textarea>
               </label>
 
               <label>
                 Deine Rolle (optional)
-                <select name="Rolle">
-                  <option value="">Keine Angabe</option>
+                <select name="Rolle_des_Vorschlagenden"> <option value="">Keine Angabe</option>
                   <option>Betroffene Person</option>
                   <option>Angehörige:r / Freund:in</option>
                   <option>Fachperson / Organisation</option>
@@ -138,8 +130,7 @@
               <label>
                 Hinweise an uns (optional)
                 <textarea
-                  name="Hinweise"
-                  placeholder="Alles, was für die Prüfung des Angebots noch wichtig ist."
+                  name="Hinweise_an_uns" placeholder="Alles, was für die Prüfung des Angebots noch wichtig ist."
                 ></textarea>
               </label>
 
@@ -165,7 +156,6 @@
     </main>
 
 
-    <!-- Footer wie auf den anderen Seiten -->
     <footer class="site-footer">
       <div class="footer-top">
         <div class="container footer-grid">

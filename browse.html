@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <!-- Header wie auf allen Seiten -->
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
@@ -25,7 +24,6 @@
     </header>
 
     <main>
-      <!-- Hero-Bereich oben -->
       <section class="group-hero">
         <div class="container group-hero-inner">
           <h1>Finde Unterstützung in Berlin</h1>
@@ -37,140 +35,169 @@
         </div>
       </section>
 
-      <!-- Filter-Bereich -->
       <section class="group-section">
         <div class="container">
           <form id="filters-form" class="filters">
-            <!-- Themen-Auswahl als Chips -->
             <div class="filter-field">
               <label>Themen</label>
               <div class="topic-checkboxes">
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Alkoholsucht" />
-                  <span>Alkoholsucht</span>
+                  <input type="checkbox" name="topic" value="Alkohol" />
+                  <span>Alkohol</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Cannabis" />
+                  <input type="checkbox" name="topic" value="Cannabis" />
                   <span>Cannabis</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Drogen / Substanzen" />
+                  <input type="checkbox" name="topic" value="Drogen / Substanzen" />
                   <span>Drogen / Substanzen</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Glücksspielsucht" />
+                  <input type="checkbox" name="topic" value="Glücksspielsucht" />
                   <span>Glücksspielsucht</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Depression" />
+                  <input type="checkbox" name="topic" value="Depression" />
                   <span>Depression</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Angst / Panik" />
+                  <input type="checkbox" name="topic" value="Angst / Panik" />
                   <span>Angst / Panik</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Trauma" />
+                  <input type="checkbox" name="topic" value="Trauma" />
                   <span>Trauma</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Essstörung" />
+                  <input type="checkbox" name="topic" value="Essstörung" />
                   <span>Essstörung</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="topics" value="Sonstige Themen" />
+                  <input type="checkbox" name="topic" value="Sonstige Themen" />
                   <span>Sonstige Themen</span>
                 </label>
               </div>
               <p class="filter-hint">Du kannst mehrere Themen auswählen.</p>
             </div>
 
-            <!-- Bezirke als Chips -->
             <div class="filter-field">
               <label>Bezirke</label>
               <div class="district-checkboxes">
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Charlottenburg-Wilmersdorf" />
+                  <input type="checkbox" name="district" value="Charlottenburg-Wilmersdorf" />
                   <span>Charlottenburg-Wilmersdorf</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Friedrichshain-Kreuzberg" />
+                  <input type="checkbox" name="district" value="Friedrichshain-Kreuzberg" />
                   <span>Friedrichshain-Kreuzberg</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Lichtenberg" />
+                  <input type="checkbox" name="district" value="Lichtenberg" />
                   <span>Lichtenberg</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Marzahn-Hellersdorf" />
+                  <input type="checkbox" name="district" value="Marzahn-Hellersdorf" />
                   <span>Marzahn-Hellersdorf</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Mitte" />
+                  <input type="checkbox" name="district" value="Mitte" />
                   <span>Mitte</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Neukölln" />
+                  <input type="checkbox" name="district" value="Neukölln" />
                   <span>Neukölln</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Pankow" />
+                  <input type="checkbox" name="district" value="Pankow" />
                   <span>Pankow</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Reinickendorf" />
+                  <input type="checkbox" name="district" value="Reinickendorf" />
                   <span>Reinickendorf</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Spandau" />
+                  <input type="checkbox" name="district" value="Spandau" />
                   <span>Spandau</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Steglitz-Zehlendorf" />
+                  <input type="checkbox" name="district" value="Steglitz-Zehlendorf" />
                   <span>Steglitz-Zehlendorf</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Tempelhof-Schöneberg" />
+                  <input type="checkbox" name="district" value="Tempelhof-Schöneberg" />
                   <span>Tempelhof-Schöneberg</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="districts" value="Treptow-Köpenick" />
+                  <input type="checkbox" name="district" value="Treptow-Köpenick" />
                   <span>Treptow-Köpenick</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="district" value="Online" />
+                  <span>Online (Web/Telefon)</span>
                 </label>
               </div>
               <p class="filter-hint">Du kannst auch mehrere Bezirke kombinieren.</p>
             </div>
 
-            <!-- Art des Angebots als Chips -->
             <div class="filter-field">
               <label>Art des Angebots</label>
               <div class="type-checkboxes">
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="types" value="Selbsthilfegruppe" />
+                  <input type="checkbox" name="groupType" value="Selbsthilfegruppe" />
                   <span>Selbsthilfegruppe</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="types" value="Beratungsstelle" />
+                  <input type="checkbox" name="groupType" value="Beratungsstelle" />
                   <span>Beratungsstelle</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="types" value="Klinik" />
+                  <input type="checkbox" name="groupType" value="Klinik" />
                   <span>Klinik</span>
                 </label>
                 <label class="checkbox-pill">
-                  <input type="checkbox" name="types" value="Online-Angebot" />
+                  <input type="checkbox" name="groupType" value="Online-Angebot" />
                   <span>Online-Angebot</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="groupType" value="Angehörige / Familiengruppe" />
+                  <span>Angehörige / Familiengruppe</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="groupType" value="Zielgruppe (Frauen)" />
+                  <span>Spezielle Zielgruppe (z.B. Frauen)</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="groupType" value="Fremdsprache (Englisch)" />
+                  <span>Fremdsprache</span>
                 </label>
               </div>
               <p class="filter-hint">Wenn du nichts auswählst, werden alle Arten berücksichtigt.</p>
             </div>
 
-            <!-- Buttons -->
+            <div class="filter-field">
+              <label for="searchInput">Freitextsuche</label>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Suche nach Name, Ort oder Schlagworten..."
+              />
+              <p class="filter-hint">Suche nach Begriffen in der Adresse oder Beschreibung.</p>
+            </div>
+
             <div class="filter-actions">
-              <button type="button" id="apply-filters" class="btn btn-filled">
+              <button
+                type="button"
+                id="apply-filters"
+                class="btn btn-filled"
+              >
                 Ergebnisse anzeigen
               </button>
-              <button type="button" id="reset-filters" class="btn btn-outline">
+              <button
+                type="button"
+                id="resetFilters" 
+                class="btn btn-outline"
+              >
                 Filter zurücksetzen
               </button>
             </div>
@@ -178,23 +205,20 @@
         </div>
       </section>
 
-      <!-- Ergebnis-Bereich -->
       <section class="group-results">
         <div class="container">
           <h2>Verfügbare Angebote</h2>
 
-          <p id="group-empty" class="group-empty">
+          <p id="noResults" class="group-empty" style="display: none;">
             Wähl oben Filter aus, um passende Gruppen in Berlin zu sehen.
           </p>
 
-          <div id="group-list" class="group-list">
-            <!-- Karten werden per JavaScript eingefügt -->
-          </div>
+          <div id="groupResults" class="group-list">
+            </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer wie auf den anderen Seiten -->
     <footer class="site-footer">
       <div class="footer-top">
         <div class="container footer-grid">
@@ -237,8 +261,6 @@
         </div>
       </div>
     </footer>
-
-    <!-- JavaScript für Filter & Ergebnisse -->
-    <script src="groups.js"></script>
+    <script src="data/groups.js"></script>
   </body>
 </html>

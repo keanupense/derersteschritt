@@ -1,222 +1,225 @@
-// Statische Liste von Gruppen – später kannst du die erweitern.
+// Alle Gruppen, die im Frontend angezeigt und gefiltert werden können.
+// Du kannst hier beliebig viele weitere Gruppen nach dem gleichen Muster ergänzen.
 const GROUPS = [
   {
-    name: "AA Kreuzberg",
-    topics: ["Alkoholsucht"],
+    name: "NA Online Meeting",
+    topics: ["Drogen / Substanzen"], 
+    districts: ["Online"], 
+    types: ["Selbsthilfegruppe", "Online-Angebot"],
+    description:
+      "Montag, 10:00 Uhr bis 10:35 Uhr. Online-Meeting von Narcotics Anonymous Berlin. Schwerpunkt: Polytox.",
+    address: "Online (Narcotics Anonymous Berlin)",
+    contact: "Narcotics Anonymous Berlin"
+  },
+  {
+    name: "Al-Anon Gruppe Charlottenburg Sekis",
+    topics: ["Alkohol"],
+    districts: ["Charlottenburg-Wilmersdorf"],
+    types: ["Angehörige / Familiengruppe"],
+    description: "Montag, 10:00 Uhr bis 11:00 Uhr. Gruppe für Angehörige von Alkoholsüchtigen.",
+    address: "Bismarckstraße 101, 10625 Berlin - Charlottenburg-Wilmersdorf",
+    contact: "Al-Anon Familiengruppen Alateen"
+  },
+  {
+    name: "Anonyme Alkoholiker",
+    topics: ["Alkohol"],
+    districts: ["Mitte"],
+    types: ["Selbsthilfegruppe"],
+    description: "Montag, 10:00 Uhr bis 12:00 Uhr. Offenes Meeting der Anonymen Alkoholiker.",
+    address: "Fehmarner Straße 24, 13353 Berlin - Mitte",
+    contact: "Anonyme Alkoholiker"
+  },
+  {
+    name: "Spiritual Principles",
+    topics: ["Alkohol", "Cannabis", "Drogen / Substanzen", "Medikamente"],
     districts: ["Friedrichshain-Kreuzberg"],
     types: ["Selbsthilfegruppe"],
-    description:
-      "Offene Gruppe für Menschen mit Alkoholproblemen. Regelmäßige Treffen in Kreuzberg.",
-    address: "Kreuzberg, nahe Kottbusser Tor",
-    contact: "Kontakt über die Berliner AA-Webseite"
+    description: "Montag, 10:30 Uhr bis 11:30 Uhr. Meeting von Narcotics Anonymous Berlin.",
+    address: "Friedrichstr. 18/19, 10969 Berlin - Friedrichshain-Kreuzberg",
+    contact: "Narcotics Anonymous Berlin"
   },
   {
-    name: "Cannabis Selbsthilfe Neukölln",
-    topics: ["Cannabis"],
-    districts: ["Neukölln"],
-    types: ["Selbsthilfegruppe"],
-    description:
-      "Austausch für Menschen, die ihren Cannabiskonsum reduzieren oder beenden möchten.",
-    address: "Neukölln, Nähe Rathaus Neukölln",
-    contact: "Über eine Selbsthilfekontaktstelle in Neukölln"
-  },
-  {
-    name: "Depressionsgruppe Mitte",
-    topics: ["Depression"],
+    name: "Die Phönix-Gruppe",
+    topics: [
+      "Alkohol", 
+      "Drogen / Substanzen", 
+      "Essstörung", 
+      "Kaufsucht", 
+      "Computerspielsucht / Internetsucht", 
+      "Medikamente",
+      "Sonstige Themen"
+    ],
     districts: ["Mitte"],
     types: ["Selbsthilfegruppe"],
-    description:
-      "Selbsthilfegruppe für Erwachsene mit Depressionen mit Fokus auf Austausch und Stabilisierung.",
-    address: "Berlin-Mitte",
-    contact: "Anmeldung über eine Selbsthilfekontaktstelle in Mitte"
+    description: "Montag, 11:00 Uhr bis 13:00 Uhr. Gruppe für verschiedene Suchtformen (Polytox).",
+    address: "Koloniestraße 76, 13359 Berlin - Mitte",
+    contact: "Bitte hier den Kontakt der Phönix-Gruppe eintragen!"
   },
   {
-    name: "Ambulante Suchtberatung Lichtenberg",
-    topics: ["Alkoholsucht", "Drogen / Substanzen"],
-    districts: ["Lichtenberg"],
-    types: ["Beratungsstelle"],
-    description:
-      "Beratungsstelle für Menschen mit Suchtproblemen und deren Angehörige.",
-    address: "Lichtenberg, Nähe Möllendorffstraße",
-    contact: "Telefonische Anmeldung über die Beratungsstelle"
+    name: "AA Discussion In person and online (Englisch)",
+    topics: ["Alkohol"],
+    districts: ["Pankow", "Online"],
+    types: ["Selbsthilfegruppe", "Online-Angebot", "Fremdsprache (Englisch)"],
+    description: "Montag, 12:00 Uhr bis 13:00 Uhr. Diskussionstreffen der Anonymen Alkoholiker in englischer Sprache.",
+    address: "Schönhauser Allee 182, 10119 Berlin - Pankow (und Online)",
+    contact: "Anonyme Alkoholiker"
   },
   {
-    name: "Online-Gruppe Glücksspiel",
-    topics: ["Glücksspielsucht"],
-    districts: ["Mitte"],
-    types: ["Online-Angebot"],
-    description:
-      "Online-Selbsthilfegruppe für Menschen mit Glücksspielproblemen.",
-    address: "Online",
-    contact: "Zugangsdaten nach Anmeldung per E-Mail"
-  },
-  {
-    name: "Frauen-Selbsthilfegruppe Essstörungen",
-    topics: ["Essstörung"],
-    districts: ["Charlottenburg-Wilmersdorf"],
+    name: "Guttempler Gemeinschaft 'Lankwitz'",
+    topics: ["Alkohol", "Drogen / Substanzen", "Medikamente"],
+    districts: ["Steglitz-Zehlendorf"],
     types: ["Selbsthilfegruppe"],
-    description:
-      "Selbsthilfegruppe für Frauen mit Anorexie, Bulimie oder Binge-Eating.",
-    address: "Charlottenburg-Wilmersdorf",
-    contact: "Infos über die lokale Selbsthilfekontaktstelle"
+    description: "Montag, 12:00 Uhr bis 14:00 Uhr. Treffen der Guttempler Gemeinschaft.",
+    address: "Ostpreußendamm 52, 12207 Berlin - Steglitz-Zehlendorf",
+    contact: "Guttempler Landesverband Berlin-Brandenburg e.V."
+  },
+  {
+    name: "Stille Straße",
+    topics: [
+      "Alkohol",
+      "Cannabis",
+      "Drogen / Substanzen",
+      "Glücksspielsucht",
+      "Medikamente",
+      "Sonstige Themen" // Für die Substanzen Benzos, Heroin, Kokain, Polytox und Spielsucht
+    ],
+    districts: ["Pankow"],
+    types: ["Selbsthilfegruppe"],
+    description: "Montag, 15:00 Uhr bis 16:30 Uhr. Gruppe des Kreuzbundes. Fokus auf multiple Suchtprobleme.",
+    address: "Stille Straße 10, 13156 Berlin - Pankow",
+    contact: "Kreuzbund Diözesanverband Berlin e.V."
+  },
+  {
+    name: "Anonyme Alkoholiker - Frauengruppe",
+    topics: ["Alkohol"],
+    districts: ["Steglitz-Zehlendorf"],
+    types: ["Selbsthilfegruppe", "Zielgruppe (Frauen)"],
+    description: "Montag, 16:00 Uhr bis 17:00 Uhr. Spezielle Gruppe für Frauen.",
+    address: "Königstraße 42 - 43, 14163 Berlin - Steglitz-Zehlendorf",
+    contact: "Anonyme Alkoholiker"
+  },
+  {
+    name: "Alkohol 'Rückenwind'",
+    topics: ["Alkohol"],
+    districts: ["Marzahn-Hellersdorf"],
+    types: ["Selbsthilfegruppe"],
+    description: "Montag, 16:00 Uhr bis 17:30 Uhr. Gruppe der Selbsthilfekontaktstelle Marzahn-Hellersdorf.",
+    address: "Altlandsberger Platz 2, 12685 Berlin - Marzahn-Hellersdorf",
+    contact: "Selbsthilfekontaktstelle Marzahn-Hellersdorf"
   }
 ];
 
-// Hilfsfunktion: ausgewählte Werte aus Checkbox-Gruppen holen
-function getSelectedValues(name) {
-  return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(
-    (el) => el.value
-  );
-}
 
-// Ergebnisse im DOM anzeigen
-function renderResults(groups) {
-  const listEl = document.getElementById("group-list");
-  const emptyEl = document.getElementById("group-empty");
+// -------------------------------
+// Filter- und Render-Logik
+// (ab hier nichts ändern, außer du weißt genau, was du tust)
+// -------------------------------
 
-  listEl.innerHTML = "";
-
-  if (!groups.length) {
-    emptyEl.textContent =
-      "Für deine Auswahl wurden noch keine Gruppen eingetragen.";
-    emptyEl.style.display = "block";
-    return;
-  }
-
-  emptyEl.style.display = "block";
-  emptyEl.textContent = `${groups.length} Angebot(e) passen zu deiner Auswahl.`;
-
-  groups.forEach((group) => {
-    const card = document.createElement("article");
-    card.className = "group-card";
-
-    const topicsText = group.topics.join(", ");
-    const districtsText = group.districts.join(", ");
-    const typesText = group.types.join(", ");
-
-    card.innerHTML = `
-      <h3>${group.name}</h3>
-      <p><strong>Art:</strong> ${typesText}</p>
-      <p><strong>Thema:</strong> ${topicsText}</p>
-      <p><strong>Bezirk:</strong> ${districtsText}</p>
-      <p>${group.description}</p>
-      <p><strong>Adresse / Ort:</strong> ${group.address}</p>
-      <p><strong>Kontakt:</strong> ${group.contact}</p>
-    `;
-
-    listEl.appendChild(card);
-  });
-}
-
-// Filter anwenden – AND / OR Logik
-function applyFilters() {
-  const selectedTopics = getSelectedValues("topics");
-  const selectedDistricts = getSelectedValues("districts");
-  const selectedTypes = getSelectedValues("types");
-
-  const nothingSelected =
-    selectedTopics.length === 0 &&
-    selectedDistricts.length === 0 &&
-    selectedTypes.length === 0;
-
-  const listEl = document.getElementById("group-list");
-  const emptyEl = document.getElementById("group-empty");
-
-  // Wenn nichts ausgewählt ist: keine Gruppen anzeigen, nur Hinweis
-  if (nothingSelected) {
-    listEl.innerHTML = "";
-    emptyEl.textContent =
-      "Wähl oben Filter aus, um passende Gruppen in Berlin zu sehen.";
-    emptyEl.style.display = "block";
-    return;
-  }
-
-  const filtered = GROUPS.filter((group) => {
-    // Themen: OR innerhalb der Themen, AND gegen andere Kategorien
-    if (
-      selectedTopics.length &&
-      !selectedTopics.some((t) => group.topics.includes(t))
-    ) {
-      return false;
-    }
-
-    // Bezirke: OR innerhalb, AND gegen andere Kategorien
-    if (
-      selectedDistricts.length &&
-      !selectedDistricts.some((d) => group.districts.includes(d))
-    ) {
-      return false;
-    }
-
-    // Art des Angebots: OR innerhalb, AND gegen andere Kategorien
-    if (
-      selectedTypes.length &&
-      !selectedTypes.some((t) => group.types.includes(t))
-    ) {
-      return false;
-    }
-
-    return true;
-  });
-
-  renderResults(filtered);
-}
-
-// Filter zurücksetzen
-function resetFilters() {
-  ["topics", "districts", "types"].forEach((name) => {
-    document
-      .querySelectorAll(`input[name="${name}"]`)
-      .forEach((el) => (el.checked = false));
-  });
-
-  const listEl = document.getElementById("group-list");
-  const emptyEl = document.getElementById("group-empty");
-
-  listEl.innerHTML = "";
-  emptyEl.textContent =
-    "Wähl oben Filter aus, um passende Gruppen in Berlin zu sehen.";
-  emptyEl.style.display = "block";
-}
-
-// Event-Listener setzen, sobald DOM geladen ist
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("filters-form");
-  const applyBtn = document.getElementById("apply-filters");
-  const resetBtn = document.getElementById("reset-filters");
+  const resultsDiv = document.getElementById("groupResults");
+  const topicCheckboxes = document.querySelectorAll('input[name="topic"]');
+  const districtCheckboxes = document.querySelectorAll('input[name="district"]');
+  const typeCheckboxes = document.querySelectorAll('input[name="groupType"]');
+  const searchInput = document.getElementById("searchInput");
+  const resetButton = document.getElementById("resetFilters");
+  const noResultsDiv = document.getElementById("noResults");
 
-  // Wenn wir nicht auf der browse-Seite sind, einfach nichts tun
-  if (!form && !applyBtn) {
-    return;
+  function getSelectedValues(checkboxes) {
+    return Array.from(checkboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
   }
 
-  // Variante A: über Formular-Submit (deine aktuelle Struktur)
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      applyFilters();
+  function filterGroups() {
+    const selectedTopics = getSelectedValues(topicCheckboxes);
+    const selectedDistricts = getSelectedValues(districtCheckboxes);
+    const selectedTypes = getSelectedValues(typeCheckboxes);
+    const searchQuery = searchInput.value.toLowerCase();
+
+    return GROUPS.filter(group => {
+      // Themen-Filter
+      const matchesTopic =
+        selectedTopics.length === 0 ||
+        selectedTopics.some(topic => group.topics.includes(topic));
+
+      // Bezirks-Filter
+      const matchesDistrict =
+        selectedDistricts.length === 0 ||
+        selectedDistricts.some(district => group.districts.includes(district));
+
+      // Gruppenform-Filter
+      const matchesType =
+        selectedTypes.length === 0 ||
+        selectedTypes.some(type => group.types.includes(type));
+
+      // Freitextsuche
+      const matchesSearch =
+        !searchQuery ||
+        group.name.toLowerCase().includes(searchQuery) ||
+        group.description.toLowerCase().includes(searchQuery) ||
+        group.address.toLowerCase().includes(searchQuery);
+
+      return matchesTopic && matchesDistrict && matchesType && matchesSearch;
     });
   }
 
-  // Variante B: falls du später einen eigenen Button mit id="apply-filters" hast
-  if (applyBtn) {
-    applyBtn.addEventListener("click", () => {
-      applyFilters();
+  function renderResults(groups) {
+    resultsDiv.innerHTML = "";
+
+    if (groups.length === 0) {
+      noResultsDiv.style.display = "block";
+      // Hier wurde der Text korrigiert, falls du ihn noch nicht in der HTML hast:
+      noResultsDiv.innerHTML = "Aktuell gibt es keine Angebote, die zu dieser Filter-Auswahl passen. Probiere eine andere Kombination aus.";
+      return;
+    }
+
+    noResultsDiv.style.display = "none";
+
+    groups.forEach(group => {
+      const card = document.createElement("div");
+      card.className = "group-card";
+
+      card.innerHTML = `
+        <h3>${group.name}</h3>
+        <p class="group-meta">
+          <strong>Themen:</strong> ${group.topics.join(", ")}<br>
+          <strong>Bezirk:</strong> ${group.districts.join(", ") || "–"}<br>
+          <strong>Angebotsform:</strong> ${group.types.join(", ")}
+        </p>
+        <p>${group.description}</p>
+        <p class="group-address"><strong>Adresse:</strong> ${group.address}</p>
+        <p class="group-contact"><strong>Kontakt:</strong> ${group.contact}</p>
+      `;
+
+      resultsDiv.appendChild(card);
     });
   }
 
-  // Schon beim Anklicken der Chips filtern (Thema, Bezirk, Art)
-  document
-    .querySelectorAll('input[name="topics"], input[name="districts"], input[name="types"]')
-    .forEach((el) => el.addEventListener("change", applyFilters));
-
-  // Reset-Button
-  if (resetBtn) {
-    resetBtn.addEventListener("click", () => {
-      resetFilters();
-    });
+  function applyFilters() {
+    const filtered = filterGroups();
+    renderResults(filtered);
   }
 
-  // Startzustand: alles leer, nur Hinweistext
-  resetFilters();
+  function resetFilters() {
+    topicCheckboxes.forEach(cb => (cb.checked = false));
+    districtCheckboxes.forEach(cb => (cb.checked = false));
+    typeCheckboxes.forEach(cb => (cb.checked = false));
+    searchInput.value = "";
+    renderResults(GROUPS);
+  }
+
+  // Event Listener
+  topicCheckboxes.forEach(cb => cb.addEventListener("change", applyFilters));
+  districtCheckboxes.forEach(cb => cb.addEventListener("change", applyFilters));
+  typeCheckboxes.forEach(cb => cb.addEventListener("change", applyFilters));
+  
+  // Verbindung des "Ergebnisse anzeigen" Buttons
+  const applyButton = document.getElementById("apply-filters");
+  applyButton.addEventListener("click", applyFilters); 
+
+  searchInput.addEventListener("input", applyFilters);
+  resetButton.addEventListener("click", resetFilters);
+
+  // Initiales Rendern
+  renderResults(GROUPS);
 });

@@ -41,7 +41,6 @@
             <h2>Neue Gruppe vorschlagen</h2>
             <p class="page-intro">
               Fülle die Felder so gut du kannst aus. Wenn du etwas nicht weißt, lass es einfach frei.
-              Beim Klick auf den Button wird der Text in dein Mailprogramm kopiert.
             </p>
 
             <form class="hero" id="suggestionForm">
@@ -68,24 +67,74 @@
               </label>
 
               <label>
-                Alle weiteren Angaben
+                Bezirk
+                <select id="groupDistrict"> <option value="">Bitte Bezirk wählen …</option>
+                  <option>Charlottenburg-Wilmersdorf</option>
+                  <option>Friedrichshain-Kreuzberg</option>
+                  <option>Lichtenberg</option>
+                  <option>Marzahn-Hellersdorf</option>
+                  <option>Mitte</option>
+                  <option>Neukölln</option>
+                  <option>Pankow</option>
+                  <option>Reinickendorf</option>
+                  <option>Spandau</option>
+                  <option>Steglitz-Zehlendorf</option>
+                  <option>Tempelhof-Schöneberg</option>
+                  <option>Treptow-Köpenick</option>
+                  <option>Online</option>
+                </select>
+              </label>
+              
+              <label>
+                Treffpunkt / Adresse
+                <input type="text" id="groupAddress" placeholder="z.&nbsp;B. Name des Hauses, Straße, Ort oder 'Online'" />
+              </label>
+
+              <label>
+                Kurzbeschreibung
                 <textarea
-                  id="additionalInfo"
-                  rows="10"
-                  placeholder="Bezirk:&#10;Adresse:&#10;Kurzbeschreibung:&#10;Kontakt zur Gruppe:&#10;Deine Rolle:"
+                  id="groupDescription"
+                  placeholder="Worum geht es in der Gruppe? Wer kann teilnehmen? Wie läuft ein Treffen ab?"
                 ></textarea>
               </label>
 
-              <p class="form-hint-email">
-                Klicke auf den Button, um die Informationen direkt in eine neue E-Mail zu übernehmen.
+              <label>
+                Kontaktmöglichkeit zur Gruppe
+                <textarea
+                  id="groupContact"
+                  placeholder="z.&nbsp;B. E-Mail-Adresse, Telefonnummer oder Website der Gruppe/Beratungsstelle"
+                ></textarea>
+              </label>
+
+              <label>
+                Deine Rolle (optional)
+                <select id="proposerRole">
+                  <option value="">Keine Angabe</option>
+                  <option>Betroffene Person</option>
+                  <option>Angehörige:r / Freund:in</option>
+                  <option>Fachperson / Organisation</option>
+                  <option>Sonstiges</option>
+                </select>
+              </label>
+
+              <label>
+                Hinweise an uns (optional)
+                <textarea
+                  id="internalNotes"
+                  placeholder="Alles, was für die Prüfung des Angebots noch wichtig ist."
+                ></textarea>
+              </label>
+
+              <p class="form-hint-email" id="emailHint">
+                Klicke auf den Button, um den Text zu generieren. Du kannst ihn dann in eine E-Mail an <strong>kontakt@dererste-schritt.de</strong> einfügen.
               </p>
 
-              <a href="#" id="mailToLink" class="btn btn-filled">
-                Gruppe per E-Mail vorschlagen
-              </a>
+              <button type="button" id="copyButton" class="btn btn-filled">
+                Text für E-Mail generieren und kopieren
+              </button>
 
               <p class="form-note">
-                Mit dem Absenden erklärst du, dass du die Angaben nach bestem Wissen gemacht hast.
+                Mit dem Klick auf den Button wird der Text in deine Zwischenablage kopiert. Es werden keine Tracker verwendet.
               </p>
             </form>
           </div>
@@ -95,29 +144,61 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const link = document.getElementById('mailToLink');
+        const copyButton = document.getElementById('copyButton');
+        const emailHint = document.getElementById('emailHint');
 
-        // Funktion, die den Mailto-Link bei jedem Klick neu generiert
-        link.addEventListener('click', (e) => {
-          e.preventDefault(); // Verhindert, dass der Link direkt springt
-
+        copyButton.addEventListener('click', async () => {
+          
+          // 1. Text aus allen Feldern sammeln und formatieren
           const name = document.getElementById('groupName').value.trim();
           const topic = document.getElementById('groupTopic').value;
-          const info = document.getElementById('additionalInfo').value.trim();
+          const district = document.getElementById('groupDistrict').value;
+          const address = document.getElementById('groupAddress').value.trim();
+          const description = document.getElementById('groupDescription').value.trim();
+          const contact = document.getElementById('groupContact').value.trim();
+          const role = document.getElementById('proposerRole').value;
+          const notes = document.getElementById('internalNotes').value.trim();
 
-          const mailToAddress = 'kontakt@dererste-schritt.de';
-          const subject = encodeURIComponent('Vorschlag einer neuen Gruppe: ' + (name || 'Unbekannter Name'));
+          let subject = `Vorschlag einer neuen Gruppe: ${name || 'Unbekannter Name'}`;
           
           let body = 'Hier ist der Vorschlag für eine neue Gruppe:\n\n';
-          body += `Name der Gruppe: ${name || '— keine Angabe —'}\n`;
-          body += `Thema: ${topic || '— keine Angabe —'}\n`;
-          body += `\nWeitere Details:\n`;
-          body += (info || '— keine weiteren Details —');
+          body += '----------------------------------------------------------\n';
+          body += `GRUPPENNAME: ${name || '— keine Angabe —'}\n`;
+          body += `THEMA: ${topic || '— keine Angabe —'}\n`;
+          body += `BEZIRK: ${district || '— keine Angabe —'}\n`;
+          body += `ADRESSE/TREFFPUNKT: ${address || '— keine Angabe —'}\n`;
+          body += `BESCHREIBUNG:\n${description || '— keine Angabe —'}\n`;
+          body += `KONTAKT ZUR GRUPPE:\n${contact || '— keine Angabe —'}\n`;
+          body += `ROLLE DES VORSCHLAGENDEN: ${role || '— keine Angabe —'}\n`;
+          body += `HINWEISE AN UNS:\n${notes || '— keine Angabe —'}\n`;
+          body += '----------------------------------------------------------';
 
-          const mailtoURI = `mailto:${mailToAddress}?subject=${subject}&body=${encodeURIComponent(body)}`;
+          try {
+            // 2. Text in die Zwischenablage kopieren (modernes API)
+            // Wir fügen Betreff und Body getrennt hinzu, damit der Nutzer den Betreff auch gleich zur Hand hat
+            const clipboardText = `BETREFF: ${subject}\n\n${body}`;
+            await navigator.clipboard.writeText(clipboardText);
 
-          // Öffnet das Mailprogramm mit den generierten Daten
-          window.location.href = mailtoURI;
+            // 3. Erfolgsmeldung und nächste Schritte anzeigen
+            copyButton.textContent = 'Text kopiert! Jetzt E-Mail an kontakt@dererste-schritt.de schicken.';
+            copyButton.classList.remove('btn-filled');
+            copyButton.style.backgroundColor = 'var(--color-primary-dark)'; // Dunkleres Grün als Erfolg
+            emailHint.innerHTML = '✅ **Text kopiert!** Bitte öffne jetzt dein E-Mail-Programm und füge den Text in eine neue Nachricht an <strong>kontakt@dererste-schritt.de</strong> ein.';
+            
+            // Zurücksetzen nach 5 Sekunden, damit der Nutzer erneut klicken kann
+            setTimeout(() => {
+              copyButton.textContent = 'Text für E-Mail generieren und kopieren';
+              copyButton.classList.add('btn-filled');
+              copyButton.style.backgroundColor = '';
+              emailHint.innerHTML = 'Klicke auf den Button, um den Text zu generieren. Du kannst ihn dann in eine E-Mail an <strong>kontakt@dererste-schritt.de</strong> einfügen.';
+            }, 5000);
+
+          } catch (err) {
+            // Falls das Kopieren fehlschlägt (z.B. wegen fehlender Berechtigung), Rückfall auf alert
+            console.error('Kopieren zur Zwischenablage fehlgeschlagen: ', err);
+            alert("Das automatische Kopieren ist fehlgeschlagen. Bitte kopiere den Text manuell aus der Konsole oder schreibe eine E-Mail an kontakt@dererste-schritt.de.");
+            copyButton.textContent = 'Kopieren fehlgeschlagen. Bitte manuell schicken.';
+          }
         });
       });
     </script>

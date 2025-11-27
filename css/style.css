@@ -237,17 +237,17 @@ img {
 }
 
 .step-number {
-  width: 32px;
-  height: 32px;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 999px;
-  background: #2f9485;
-  color: #ffffff;
+  border: 1.5px solid #111827;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   font-size: 0.95rem;
-  margin-top: 0.15rem;
+  flex-shrink: 0;
+  background: #ffffff;
 }
 
 .step-content h3 {
@@ -297,81 +297,295 @@ img {
   margin: 0 0 1.4rem;
 }
 
-/* ---------- Spenden-Teaser ---------- */
+/* ---------- Unterstütze dieses Projekt (Startseite) ---------- */
 
-.donate-teaser {
-  background: #ffffff; /* weiß, Fokus auf Text + Button */
-  padding: 3rem 0 3.4rem;
+.support-cta-section {
+  background: #f9fafb;
+  padding: 3.2rem 0 3.4rem;
   border-top: 1px solid rgba(15, 23, 42, 0.04);
 }
 
-.donate-teaser h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin: 0 0 0.6rem;
+.support-cta-inner {
+  max-width: 780px;
+  margin: 0 auto;
 }
 
-.donate-teaser p {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 1.4rem;
-  font-size: 0.95rem;
-  color: #4b5563;
+.support-cta-inner h2 {
+  font-size: 1.9rem;
+  margin: 0 0 0.9rem;
 }
 
-.donate-teaser .btn-wrapper {
-  text-align: center;
-}
-
-/* ---------- Browse-Seite: Filter & Gruppen ---------- */
-
-main {
-  /* Platzhalter – Landing hat eigene Farben, Unterseiten nutzen Sections */
-}
-
-.filters {
-  background: #ffffff;
-  border-radius: 1.2rem;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.8rem;
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.09);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-}
-
-.filters label {
-  font-size: 0.85rem;
-  font-weight: 500;
+.support-cta-inner p {
+  margin: 0 0 0.5rem;
+  font-size: 0.96rem;
   color: #374151;
 }
 
-.filters select {
-  display: block;
-  margin-top: 0.25rem;
-  padding: 0.45rem 0.75rem;
-  border-radius: 0.75rem;
-  border: 1px solid #e5e7eb;
-  background: #f9fafb;
-  font: inherit;
+.support-cta-note {
+  color: #4b5563;
 }
 
+.support-cta-actions {
+  margin-top: 1.4rem;
+}
+
+/* ---------- Spenden-Seite ---------- */
+
+.donate-hero {
+  background: #e4f3ef; /* leichtes, freundliches Grün angelehnt an Hero */
+  padding: 3.5rem 0 3rem;
+}
+
+.donate-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.donate-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.2rem;
+  color: #111827;
+}
+
+.donate-hero p {
+  margin: 0 0 0.9rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #1f2933;
+}
+
+.donate-hint {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.donate-cta-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Abschnitt: Wie deine Spende hilft (1-2-3) */
+.donate-steps {
+  padding-top: 3rem;
+  padding-bottom: 3.5rem;
+}
+
+/* Zahlungsoptionen */
+.donate-section {
+  background: #ffffff;
+  padding: 3rem 0 3.8rem;
+}
+
+.donate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.donate-card {
+  background: #ffffff;
+  border-radius: 1.1rem;
+  padding: 1.4rem 1.5rem 1.5rem;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+}
+
+.donate-card h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+}
+
+.donate-card p {
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+.donate-card ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.donate-link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.donate-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive für Spenden-Seite */
+@media (max-width: 900px) {
+  .donate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .donate-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ---------- Angebots-Seite: Hero & Layout ---------- */
+
+.group-hero {
+  background: #e4f3ef; /* angelehnt an Spenden-Hero, aber etwas heller */
+  padding: 3rem 0 2.5rem;
+}
+
+.group-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.group-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  margin: 0 0 1.1rem;
+  color: #111827;
+}
+
+.group-hero-text {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #1f2933;
+}
+
+
+/* Bereich mit Filtern + Karten */
+.group-section {
+  background: #f3f4f6;
+  padding: 2.5rem 0 3.5rem;
+}
+/* Ergebnis-Bereich mit Karten */
+
+.group-results {
+  background: #e4f3ef;           /* helles Grün, spricht an */
+  padding: 2.8rem 0 3.6rem;
+}
+
+.group-results h2 {
+  font-size: 1.7rem;
+  margin: 0 0 1.5rem;
+}
+
+
+/* Filter-Box */
+.filters {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.3rem 1.5rem 1.6rem;
+  margin-top: 2rem;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+  align-items: flex-end;
+}
+
+.filter-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.3rem;
+}
+
+.filter-field input[type="text"],
+.filter-field select {
+  max-width: 260px;
+}
+
+/* ---------- Themen- / Bezirks- / Typen-Checkliste ---------- */
+
+.topic-checkboxes,
+.district-checkboxes,
+.type-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.checkbox-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+  justify-content: flex-start;
+}
+
+.checkbox-pill input[type="checkbox"] {
+  accent-color: #059669; /* Grün passend zum Rest */
+}
+
+.checkbox-pill:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+@media (max-width: 900px) {
+  .topic-checkboxes,
+  .district-checkboxes,
+  .type-checkboxes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* Filterboxen (bauen auf deinem .filters-Block auf) */
+.filter-field {
+  min-width: 220px;
+}
+
+.filter-hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.filter-help {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0.45rem 0 0;
+}
+
+/* Liste der Gruppen-Karten */
 .group-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
+  margin-top: 1.8rem;
 }
 
 .group-card {
   background: #ffffff;
   border-radius: 1.2rem;
   padding: 1.25rem 1.35rem 1.4rem;
-  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.09);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
 }
 
 .group-card h3 {
   margin: 0 0 0.5rem;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .group-card p {
@@ -390,6 +604,21 @@ main {
   font-size: 0.9rem;
   color: #2563eb;
 }
+
+/* leere-State */
+.group-empty {
+  margin-top: 1.8rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .group-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* ---------- Forms & Inputs (Suggestion etc.) ---------- */
 
@@ -458,42 +687,154 @@ textarea {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  padding: 2rem 0 2.5rem;
+  background: #e5e7eb;           /* helles Grau, sauber & nicht zu beige */
+  color: #4b5563;
+  font-size: 0.85rem;
+}
+
+/* oberer Bereich mit den drei Spalten */
+.footer-top {
+  padding: 2.5rem 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.footer-column p {
+  margin: 0 0 0.6rem;
+  line-height: 1.5;
+}
+
+.footer-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: #111827;
+}
+
+.footer-support-hint {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Link-Liste im Footer */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li + li {
+  margin-top: 0.35rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #374151;
+}
+
+.footer-links a:hover {
+  color: #111827;
+  text-decoration: underline;
+}
+
+/* unterer Balken mit Copyright */
+.footer-bottom {
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 0.9rem 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6b7280;
+}
+
+/* responsive: untereinander statt Spalten */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+ } 
+
+/* ---------- Gruppe vorschlagen ---------- */
+
+.suggest-hero {
+  background: #e4f3ef;           /* gleiches Grün wie Browse/Spenden-Hero */
+  padding: 3.2rem 0 3rem;
+}
+
+.suggest-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.suggest-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem;
+  color: #111827;
+}
+
+.suggest-hero-text {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #1f2933;
+}
+
+/* Bereich mit Formular im grauen Hintergrund wie bei Browse */
+.suggest-section {
+  background: #f3f4f6;          /* gleich wie Browse-Filterbereich */
+  padding: 3rem 0 3.6rem;
+}
+
+/* Weiße Karte für das Formular – wie andere Cards */
+.suggest-card {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 1.8rem 1.9rem 2rem;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.suggest-card h2 {
+  font-size: 1.7rem;
+  margin: 0 0 0.7rem;
+}
+
+.suggest-card .page-intro {
+  margin-bottom: 1.4rem;
+}
+
+/* kleine Hinweise unter dem Formular */
+.form-hint-email,
+.form-note {
   font-size: 0.82rem;
   color: #6b7280;
-  text-align: center;
-  background: #f3f4f6; /* gleich wie Body, wirkt wie ruhiger Abschluss */
+  margin-top: 0.3rem;
 }
 
-/* ---------- Responsive ---------- */
+.form-note {
+  margin-top: 0.9rem;
+}
 
+/* Button unten im Formular leicht absetzen */
+.suggest-card .btn {
+  margin-top: 0.9rem;
+}
+
+/* auf kleinen Screens: Card voll breit, Abstände halten */
 @media (max-width: 900px) {
-  .landing-hero {
-    padding: 3.5rem 0 3.8rem;
-  }
-
-  .landing-hero h1 {
-    font-size: 2.4rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .support-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .group-list {
-    grid-template-columns: 1fr;
-  }
-
-  .steps-list {
-    grid-template-columns: 1fr;
+  .suggest-card {
+    padding: 1.5rem 1.3rem 1.8rem;
   }
 }
+

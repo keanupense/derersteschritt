@@ -7,117 +7,278 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-   <header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <span class="brand-mark">✦</span>
-      <span class="brand-name">Der erste Schritt</span>
-    </div>
-    <nav class="main-nav">
-      <a href="spenden.html">Jetzt spenden</a>
-      <a href="index.html">Startseite</a>
-      <a href="browse.html">Angebote finden</a>
-      <a href="suggestion.html">Gruppe vorschlagen</a>
-      <a href="about_support.html">Über uns</a>
-    </nav>
-  </div>
-</header>
+    <!-- Gleicher Header wie auf allen Seiten -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-mark">✦</span>
+          <span class="brand-name">Der erste Schritt</span>
+        </div>
+        <nav class="main-nav">
+          <a href="spenden.html">Jetzt spenden</a>
+          <a href="index.html">Startseite</a>
+          <a href="browse.html">Angebote finden</a>
+          <a href="suggestion.html">Gruppe vorschlagen</a>
+          <a href="about_support.html">Über uns</a>
+        </nav>
+      </div>
+    </header>
 
-    <main>
-      <section class="support-section">
-        <div class="container">
-          <h1>Gruppen in Berlin finden</h1>
-          <p class="support-subtitle">
-            Nutze die Filter, um passende Selbsthilfegruppen und Beratungsangebote zu finden.
-            Alle Angaben ohne Gewähr – bitte prüfe Termine und Kontaktdaten direkt bei der
-            jeweiligen Gruppe oder Stelle.
-          </p>
+      <main>
+    <!-- Hero-Bereich oben -->
+    <section class="group-hero">
+      <div class="container group-hero-inner">
+        <h1>Finde eine Gruppe in Berlin</h1>
+        <p class="group-hero-text">
+          Nutze die Filter, um Selbsthilfegruppen und Beratungsstellen zu finden, die zu deiner Situation
+          passen. Alle Angaben ohne Gewähr – informiere dich im Zweifel direkt bei der Gruppe.
+        </p>
+      </div>
+    </section>
 
-          <!-- Filter-Box -->
-          <div class="filters">
-            <div>
-              <label for="topic-filter">Thema</label>
-              <select id="topic-filter">
-                <option value="alle">Alle</option>
-                <option value="sucht">Sucht</option>
-                <option value="depression">Depression</option>
-                <option value="angst">Angst</option>
-                <option value="angehoerige">Angehörige</option>
-                <option value="sonstiges">Sonstiges</option>
-              </select>
-            </div>
+    <!-- Such- / Filterbereich (grauer Hintergrund) -->
+    <section class="group-section">
+      <div class="container">
+        <div class="filters">
+          <!-- 1. Nach Name suchen -->
+          <div class="filter-field" style="flex: 1 1 100%;">
+            <label for="searchName">Nach Name suchen</label>
+            <input
+              type="text"
+              id="searchName"
+              placeholder="z. B. AA Kreuzberg"
+            />
+          </div>
 
-            <div>
-              <label for="district-filter">Bezirk</label>
-              <select id="district-filter">
-                <option value="alle">Alle</option>
-                <option value="mitte">Mitte</option>
-                <option value="friedrichshain-kreuzberg">Friedrichshain-Kreuzberg</option>
-                <option value="pankow">Pankow</option>
-                <option value="charlottenburg-wilmersdorf">Charlottenburg-Wilmersdorf</option>
-                <option value="spandau">Spandau</option>
-                <option value="steglitz-zehlendorf">Steglitz-Zehlendorf</option>
-                <option value="tempelhof-schoeneberg">Tempelhof-Schöneberg</option>
-                <option value="neukoelln">Neukölln</option>
-                <option value="treptow-koepenick">Treptow-Köpenick</option>
-                <option value="marzahn-hellersdorf">Marzahn-Hellersdorf</option>
-                <option value="lichtenberg">Lichtenberg</option>
-                <option value="reinickendorf">Reinickendorf</option>
-              </select>
+          <!-- 2. Themen (Mehrfachauswahl als Pills) -->
+          <div class="filter-field" style="flex: 1 1 100%;">
+            <label>Themen</label>
+            <div class="topic-checkboxes">
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Alkoholsucht" />
+                Alkoholsucht
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Cannabis" />
+                Cannabis
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Drogen / Substanzen" />
+                Drogen / Substanzen
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Glücksspiel" />
+                Glücksspielsucht
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Depression" />
+                Depression
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Angst / Panik" />
+                Angst / Panik
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Trauma" />
+                Trauma
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Essstörung" />
+                Essstörung
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Angehörige" />
+                Angehörige
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Sonstiges" />
+                Sonstige Themen
+              </label>
             </div>
           </div>
 
-          <!-- Ergebnisliste – wird per JS gefüllt -->
-          <div id="group-list" class="group-list"></div>
+          <!-- 3. Bezirke (Mehrfachauswahl als Pills, alphabetisch) -->
+          <div class="filter-field" style="flex: 1 1 100%;">
+            <label>Bezirke</label>
+            <div class="district-checkboxes">
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Charlottenburg-Wilmersdorf" />
+                Charlottenburg-Wilmersdorf
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Friedrichshain-Kreuzberg" />
+                Friedrichshain-Kreuzberg
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Lichtenberg" />
+                Lichtenberg
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Marzahn-Hellersdorf" />
+                Marzahn-Hellersdorf
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Mitte" />
+                Mitte
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Neukölln" />
+                Neukölln
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Pankow" />
+                Pankow
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Reinickendorf" />
+                Reinickendorf
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Spandau" />
+                Spandau
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Steglitz-Zehlendorf" />
+                Steglitz-Zehlendorf
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Tempelhof-Schöneberg" />
+                Tempelhof-Schöneberg
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Treptow-Köpenick" />
+                Treptow-Köpenick
+              </label>
+            </div>
+            <p class="filter-help">Du kannst mehrere Bezirke auswählen.</p>
+          </div>
 
-          <p style="margin-top: 1.5rem; font-size: 0.82rem; color: #6b7280;">
-            Hinweis: Dieses Verzeichnis erhebt keinen Anspruch auf Vollständigkeit. Wenn Sie eine
-            Gruppe kennen, die fehlt, können Sie sie über „Gruppe vorschlagen“ eintragen.
-          </p>
+          <!-- 4. Art des Angebots (Mehrfachauswahl als Pills) -->
+          <div class="filter-field" style="flex: 1 1 100%;">
+            <label>Art des Angebots</label>
+            <div class="type-checkboxes">
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Selbsthilfegruppe" />
+                Selbsthilfegruppe
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Beratungsstelle" />
+                Beratungsstelle
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Klinik" />
+                Klinik
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Online-Gruppe" />
+                Online-Gruppe
+              </label>
+              <label class="checkbox-pill">
+                <input type="checkbox" value="Hotline / Krisendienst" />
+                Hotline / Krisendienst
+              </label>
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
+    <!-- Ergebnisbereich mit hellgrünem Hintergrund -->
+    <section class="group-results">
+      <div class="container">
+        <h2>Verfügbare Angebote</h2>
+
+        <div id="groupList" class="group-list">
+          <!-- 3 Beispiel-Gruppen als Platzhalter -->
+          <article class="group-card">
+            <h3>AA Kreuzberg</h3>
+            <p><strong>Art:</strong> Selbsthilfegruppe</p>
+            <p><strong>Bezirk:</strong> Friedrichshain-Kreuzberg</p>
+            <p><strong>Thema:</strong> Alkoholsucht</p>
+            <p>
+              Offene Gruppe für Menschen, die mit Alkoholabhängigkeit kämpfen und einen sicheren Raum
+              für Austausch suchen.
+            </p>
+            <a href="#">Mehr erfahren</a>
+          </article>
+
+          <article class="group-card">
+            <h3>Cannabisgruppe Neukölln</h3>
+            <p><strong>Art:</strong> Selbsthilfegruppe</p>
+            <p><strong>Bezirk:</strong> Neukölln</p>
+            <p><strong>Thema:</strong> Cannabis</p>
+            <p>
+              Wöchentliche Gruppe für Menschen, die ihren Cannabiskonsum reduzieren oder beenden möchten.
+            </p>
+            <a href="#">Mehr erfahren</a>
+          </article>
+
+          <article class="group-card">
+            <h3>Depressionsgruppe Mitte</h3>
+            <p><strong>Art:</strong> Beratungsstelle</p>
+            <p><strong>Bezirk:</strong> Mitte</p>
+            <p><strong>Thema:</strong> Depression</p>
+            <p>
+              Beratungsangebot mit festen Terminen und moderierten Gesprächsgruppen im Herzen von Berlin.
+            </p>
+            <a href="#">Mehr erfahren</a>
+          </article>
+        </div>
+
+        <p id="groupEmpty" class="group-empty" hidden>
+          Es sind noch keine Gruppen eingetragen.
+        </p>
+      </div>
+    </section>
+  </main>
+
+
+    <!-- Footer wie auf den anderen Seiten -->
     <footer class="site-footer">
-      <div class="container footer-top">
-        <div class="footer-col footer-col-main">
-          <h3>Der erste Schritt</h3>
-          <p>
-            Ein öffentliches Verzeichnis für Selbsthilfegruppen und Beratungsangebote zu Sucht und
-            psychischer Gesundheit in Berlin.
-          </p>
+      <div class="footer-top">
+        <div class="container footer-grid">
+          <div class="footer-column">
+            <h3 class="footer-heading">Der erste Schritt</h3>
+            <p>
+              Ein öffentliches Verzeichnis für Selbsthilfegruppen und Beratungsangebote
+              zu Sucht und psychischer Gesundheit in Berlin. Anonym, kostenlos und ohne Anmeldung.
+            </p>
+            <p class="footer-support-hint">
+              Kein Ersatz für professionelle Therapie. In akuten Krisen wende dich bitte an den Notruf 112
+              oder den Berliner Krisendienst.
+            </p>
+          </div>
 
-          <h4>Unterstützen</h4>
-          <p>Helfen Sie uns, dieses Projekt zu erhalten und auszubauen.</p>
-          <a href="about_support.html" class="footer-link">Jetzt spenden</a>
-        </div>
+          <div class="footer-column">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="browse.html">Angebote finden</a></li>
+              <li><a href="suggestion.html">Gruppe vorschlagen</a></li>
+              <li><a href="about_support.html">Über uns</a></li>
+              <li><a href="spenden.html">Jetzt spenden</a></li>
+            </ul>
+          </div>
 
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="browse.html">Angebote finden</a></li>
-            <li><a href="suggestion.html">Gruppe vorschlagen</a></li>
-            <li><a href="about_support.html">Über uns &amp; Unterstützen</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="#">Impressum</a></li>
-            <li><a href="#">Datenschutzerklärung</a></li>
-          </ul>
+          <div class="footer-column">
+            <h3 class="footer-heading">Rechtliches</h3>
+            <ul class="footer-links">
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="container footer-bottom">
-        <p>© 2025 Der erste Schritt. Alle Rechte vorbehalten.</p>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© 2025 Der erste Schritt</p>
+        </div>
       </div>
     </footer>
 
-    <!-- Daten + Logik für die Gruppen -->
+    <!-- Daten & Logik -->
     <script src="data/groups.js"></script>
-    <script src="js/groups.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

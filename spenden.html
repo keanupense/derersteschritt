@@ -9,70 +9,182 @@
   <body>
     <!-- Gleicher Header wie auf allen Seiten -->
     <header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <span class="brand-mark">✦</span>
-      <span class="brand-name">Der erste Schritt</span>
-    </div>
-    <nav class="main-nav">
-      <a href="spenden.html">Jetzt spenden</a>
-      <a href="index.html">Startseite</a>
-      <a href="browse.html">Angebote finden</a>
-      <a href="suggestion.html">Gruppe vorschlagen</a>
-      <a href="about_support.html">Über uns</a>
-    </nav>
-  </div>
-</header>
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-mark">✦</span>
+          <span class="brand-name">Der erste Schritt</span>
+        </div>
+        <nav class="main-nav">
+          <a href="spenden.html">Jetzt spenden</a>
+          <a href="index.html">Startseite</a>
+          <a href="browse.html">Angebote finden</a>
+          <a href="suggestion.html">Gruppe vorschlagen</a>
+          <a href="about_support.html">Über uns</a>
+        </nav>
+      </div>
+    </header>
 
     <main>
-      <!-- Hero nur für Spenden -->
+      <!-- Hero-Bereich für Spenden -->
       <section class="donate-hero">
         <div class="container donate-hero-inner">
-          <h1>Unterstütze dieses Verzeichnis</h1>
+          <h1>Unterstütze „Der erste Schritt“</h1>
           <p>
-            „Der erste Schritt“ ist ein ehrenamtliches Projekt. Mit deiner Spende hilfst du dabei,
-            das Verzeichnis aktuell zu halten, neue Gruppen aufzunehmen und mehr Menschen in Berlin
-            den Zugang zu Hilfe zu erleichtern.
+            Dieses Verzeichnis wird ehrenamtlich gepflegt. Mit deiner Spende hilfst du dabei,
+            die Plattform zu erhalten, neue Selbsthilfegruppen aufzunehmen und mehr Menschen in Berlin
+            den Zugang zu Unterstützung zu erleichtern.
           </p>
           <p class="donate-hint">
-            Jeder Betrag hilft – einmalig oder regelmäßig. Du musst dafür keinen Account anlegen.
+            Jeder Beitrag hilft – einmalig oder regelmäßig. Kein Login, kein Tracking, einfach helfen.
           </p>
+
+          <div class="donate-cta-buttons">
+            <a
+              href="https://paypal.me/keanupense"
+              class="btn btn-filled"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Über PayPal spenden
+            </a>
+            <a href="#bankspende" class="btn btn-outline">
+              Bankverbindung anzeigen
+            </a>
+          </div>
         </div>
       </section>
 
-      <!-- Abschnitt mit Spendeninfos -->
+      <!-- 1-2-3: Wie deine Spende hilft -->
+      <section class="steps-section donate-steps">
+        <div class="container">
+          <h2>Wie deine Spende hilft</h2>
+          <ol class="steps-list">
+            <li class="step-item">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Verzeichnis aktuell halten</h3>
+                <p>
+                  Gruppen anschreiben, Daten prüfen, neue Angebote aufnehmen – damit du verlässliche
+                  Informationen findest, wenn du sie brauchst.
+                </p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Suche & Funktionen verbessern</h3>
+                <p>
+                  Filter, Darstellung und Technik der Seite weiterentwickeln, damit du schneller passende
+                  Unterstützung in Berlin findest.
+                </p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Mehr Menschen erreichen</h3>
+                <p>
+                  Das Projekt bekannter machen, Flyer drucken und Selbsthilfegruppen informieren –
+                  damit noch mehr Menschen den ersten Schritt gehen können.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Zahlungsarten / Kontodaten -->
       <section class="donate-section">
         <div class="container donate-grid">
           <article class="donate-card">
-            <h2>Wie deine Spende hilft</h2>
-            <ul>
-              <li>Recherche & Pflege der Einträge zu Selbsthilfegruppen</li>
-              <li>Kontakt zu Gruppen, um Daten aktuell zu halten</li>
-              <li>Weiterentwicklung der Website & bessere Suchfunktionen</li>
-            </ul>
+            <h2>PayPal</h2>
+            <p>
+              Du kannst direkt und unkompliziert per PayPal spenden. Der Link führt dich auf die
+              PayPal-Seite von Keanu Pense.
+            </p>
+            <a
+              href="https://paypal.me/keanupense"
+              class="donate-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              paypal.me/keanupense
+            </a>
+          </article>
+
+          <article class="donate-card" id="bankspende">
+            <h2>Banküberweisung</h2>
+            <p><strong>Kontoinhaber:</strong><br />Keanu Pense</p>
+            <p><strong>IBAN:</strong><br />DE15 1005 0000 1070 5034 24</p>
+            <p>
+              <strong>Verwendungszweck:</strong><br />
+              „Spende Der erste Schritt“
+            </p>
+            <p>
+              Bitte gib den Verwendungszweck an, damit die Spende zugeordnet werden kann.
+            </p>
           </article>
 
           <article class="donate-card">
-            <h2>Spendenkonto</h2>
-            <p><strong>Kontoinhaber:</strong><br />Der erste Schritt (Projektname – Platzhalter)</p>
-            <p><strong>IBAN:</strong><br />DE00 0000 0000 0000 0000 00</p>
-            <p><strong>Verwendungszweck:</strong><br />„Spende Der erste Schritt“</p>
-            <p class="donate-note">
-              Die Angaben sind aktuell nur Platzhalter. Sobald ein offizielles Konto steht, werden
-              die Daten hier aktualisiert.
+            <h2>Revolut</h2>
+            <p>
+              Wenn du Revolut nutzt, kannst du auch dort unkompliziert spenden.
             </p>
+            <p><strong>Revolut:</strong><br />@kpense</p>
+            <a
+              href="https://revolut.me/kpense"
+              class="donate-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              revolut.me/kpense
+            </a>
           </article>
         </div>
       </section>
     </main>
 
+    <!-- Footer mit Impressum/DSGVO wie auf der Startseite -->
     <footer class="site-footer">
-      <div class="container">
-        <p>
-          Kein Ersatz für professionelle Therapie. In akuten Krisen wende dich bitte an den Notruf
-          112 oder den Berliner Krisendienst.
-        </p>
-        <p>© 2025 Der erste Schritt</p>
+      <div class="footer-top">
+        <div class="container footer-grid">
+          <div class="footer-column">
+            <h3 class="footer-heading">Der erste Schritt</h3>
+            <p>
+              Ein öffentliches Verzeichnis für Selbsthilfegruppen und Beratungsangebote
+              zu Sucht und psychischer Gesundheit in Berlin. Anonym, kostenlos und ohne Anmeldung.
+            </p>
+            <p class="footer-support-hint">
+              Kein Ersatz für professionelle Therapie. In akuten Krisen wende dich bitte an den Notruf 112
+              oder den Berliner Krisendienst.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="browse.html">Angebote finden</a></li>
+              <li><a href="suggestion.html">Gruppe vorschlagen</a></li>
+              <li><a href="about_support.html">Über uns</a></li>
+              <li><a href="spenden.html">Jetzt spenden</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">Rechtliches</h3>
+            <ul class="footer-links">
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© 2025 Der erste Schritt</p>
+        </div>
       </div>
     </footer>
   </body>

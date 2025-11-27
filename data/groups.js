@@ -1,24 +1,39 @@
-// data/groups.js
+// Einfache Beispiel-Daten – kannst du später easy anpassen/erweitern
 const GROUPS = [
   {
+    id: 1,
     name: "AA Kreuzberg",
-    type: "sucht", // 'sucht' oder 'psychisch'
-    focus: "Alkoholsucht",
-    district: "Kreuzberg",
+    topic: "sucht",
+    type: "Selbsthilfegruppe",
+    district: "Friedrichshain-Kreuzberg",
     weekday: "Montag",
-    time: "19:00",
+    time: "19:00 Uhr",
     address: "Beispielstraße 1, 10997 Berlin",
-    link: "https://example-aa-berlin.de"
+    note: "Offene Gruppe für Menschen mit Alkoholsucht, keine Anmeldung nötig.",
+    link: "https://example.org/aa-kreuzberg"
   },
   {
+    id: 2,
     name: "Depressionsgruppe Mitte",
-    type: "psychisch",
-    focus: "Depression",
+    topic: "depression",
+    type: "Selbsthilfegruppe",
     district: "Mitte",
     weekday: "Mittwoch",
-    time: "18:30",
+    time: "18:30 Uhr",
     address: "Musterweg 5, 10115 Berlin",
-    link: ""
+    note: "Austauschgruppe für Betroffene mit Depressionen.",
+    link: "https://example.org/depressionsgruppe-mitte"
+  },
+  {
+    id: 3,
+    name: "Beratungsstelle Neukölln",
+    topic: "sonstiges",
+    type: "Beratungsstelle",
+    district: "Neukölln",
+    weekday: "nach Vereinbarung",
+    time: "",
+    address: "Beratungsweg 10, 12045 Berlin",
+    note: "Kostenlose Erstberatung zu Sucht und psychischer Gesundheit.",
+    link: "https://example.org/beratungsstelle-neukoelln"
   }
-  // Hier kannst du später weitere Gruppen ergänzen
 ];

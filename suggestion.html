@@ -7,141 +7,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-   <header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <span class="brand-mark">✦</span>
-      <span class="brand-name">Der erste Schritt</span>
-    </div>
-    <nav class="main-nav">
-      <a href="spenden.html">Jetzt spenden</a>
-      <a href="index.html">Startseite</a>
-      <a href="browse.html">Angebote finden</a>
-      <a href="suggestion.html">Gruppe vorschlagen</a>
-      <a href="about_support.html">Über uns</a>
-    </nav>
-  </div>
-</header>
+    <!-- Header wie auf allen Seiten -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-mark">✦</span>
+          <span class="brand-name">Der erste Schritt</span>
+        </div>
+        <nav class="main-nav">
+          <a href="spenden.html">Jetzt spenden</a>
+          <a href="index.html">Startseite</a>
+          <a href="browse.html">Angebote finden</a>
+          <a href="suggestion.html">Gruppe vorschlagen</a>
+          <a href="about_support.html">Über uns</a>
+        </nav>
+      </div>
+    </header>
 
-    <main>
-      <section class="support-section">
+           <main>
+      <!-- Hero-Bereich oben, wie auf den anderen Seiten -->
+      <section class="suggest-hero">
+        <div class="container suggest-hero-inner">
+          <h1>Schlag eine Gruppe oder Beratung vor</h1>
+          <p class="suggest-hero-text">
+            Du kennst eine Selbsthilfegruppe, Beratungsstelle oder ein anderes Angebot, das hier noch
+            fehlt? Mit ein paar Angaben hilfst du dabei, das Verzeichnis vollständiger zu machen –
+            anonym, ohne Account und kostenlos.
+          </p>
+        </div>
+      </section>
+
+      <!-- Grauer Bereich mit weißer Formular-Card -->
+      <section class="suggest-section">
         <div class="container">
-          <h1>Neue Gruppe vorschlagen</h1>
-          <p class="support-subtitle">
-            Sie kennen eine Selbsthilfegruppe oder Beratungsstelle in Berlin, die hier noch fehlt?
-            Tragen Sie die Infos ein und schicken Sie sie ab. Die Angaben werden nur genutzt, um die
-            Gruppe zu prüfen und ggf. in dieses Verzeichnis aufzunehmen.
-          </p>
+          <div class="suggest-card">
+            <h2>Neue Gruppe vorschlagen</h2>
+            <p class="page-intro">
+              Fülle die Felder so gut du kannst aus. Wenn du etwas nicht weißt, lass es einfach frei.
+              Beim Absenden öffnet sich dein Mailprogramm und erstellt eine E-Mail mit allen Angaben.
+            </p>
 
-          <form
-            class="hero"
-            action="mailto:kontakt@dererste-schritt.de"
-            method="post"
-            enctype="text/plain"
-          >
-            <label>
-              Name der Gruppe<br />
-              <input type="text" name="name" required />
-            </label>
+            <form
+              class="hero"
+              action="mailto:kontakt@dererste-schritt.de"
+              method="post"
+              enctype="text/plain"
+            >
+              <label>
+                Name der Gruppe oder Einrichtung *
+                <input
+                  type="text"
+                  name="Gruppenname"
+                  placeholder="z.&nbsp;B. AA Kreuzberg oder Depressionsgruppe Mitte"
+                  required
+                />
+              </label>
 
-            <label>
-              Thema / Fokus<br />
-              <input
-                type="text"
-                name="focus"
-                placeholder="z. B. Alkoholsucht, Depression, Angehörige"
-                required
-              />
-            </label>
+              <label>
+                Thema *
+                <select name="Thema" required>
+                  <option value="">Bitte auswählen …</option>
+                  <option>Alkoholsucht</option>
+                  <option>Cannabis</option>
+                  <option>Drogen / Substanzen</option>
+                  <option>Glücksspielsucht</option>
+                  <option>Depression</option>
+                  <option>Angst / Panik</option>
+                  <option>Trauma</option>
+                  <option>Essstörung</option>
+                  <option>Angehörige</option>
+                  <option>Sonstige Themen</option>
+                </select>
+              </label>
 
-            <label>
-              Bezirk<br />
-              <input type="text" name="district" placeholder="z. B. Neukölln" required />
-            </label>
+              <label>
+                Bezirk *
+                <select name="Bezirk" required>
+                  <option value="">Bitte Bezirk wählen …</option>
+                  <option>Charlottenburg-Wilmersdorf</option>
+                  <option>Friedrichshain-Kreuzberg</option>
+                  <option>Lichtenberg</option>
+                  <option>Marzahn-Hellersdorf</option>
+                  <option>Mitte</option>
+                  <option>Neukölln</option>
+                  <option>Pankow</option>
+                  <option>Reinickendorf</option>
+                  <option>Spandau</option>
+                  <option>Steglitz-Zehlendorf</option>
+                  <option>Tempelhof-Schöneberg</option>
+                  <option>Treptow-Köpenick</option>
+                </select>
+              </label>
 
-            <label>
-              Treffpunkt / Adresse<br />
-              <input
-                type="text"
-                name="address"
-                placeholder="Straße, Hausnummer, ggf. Ortsteil"
-                required
-              />
-            </label>
+              <label>
+                Treffpunkt / Adresse
+                <input
+                  type="text"
+                  name="Treffpunkt_oder_Adresse"
+                  placeholder="z.&nbsp;B. Name des Hauses, Straße, Ort"
+                />
+              </label>
 
-            <label>
-              Regelmäßiger Termin<br />
-              <input
-                type="text"
-                name="time"
-                placeholder="z. B. jeden Dienstag, 19:00 Uhr"
-                required
-              />
-            </label>
+              <label>
+                Kurzbeschreibung
+                <textarea
+                  name="Kurzbeschreibung"
+                  placeholder="Worum geht es in der Gruppe? Wer kann teilnehmen? Wie läuft ein Treffen ab?"
+                ></textarea>
+              </label>
 
-            <label>
-              Kontaktmöglichkeiten<br />
-              <textarea
-                name="contact"
-                placeholder="E-Mail, Telefon oder Website – alles, was für die Kontaktaufnahme wichtig ist."
-                required
-              ></textarea>
-            </label>
+              <label>
+                Kontaktmöglichkeit zur Gruppe
+                <textarea
+                  name="Kontakt"
+                  placeholder="z.&nbsp;B. E-Mail-Adresse, Telefonnummer oder Website der Gruppe/Beratungsstelle"
+                ></textarea>
+              </label>
 
-            <label>
-              Weitere Hinweise (optional)<br />
-              <textarea
-                name="notes"
-                placeholder="z. B. für wen die Gruppe gedacht ist, Sprachen, Barrierefreiheit …"
-              ></textarea>
-            </label>
+              <label>
+                Deine Rolle (optional)
+                <select name="Rolle">
+                  <option value="">Keine Angabe</option>
+                  <option>Betroffene Person</option>
+                  <option>Angehörige:r / Freund:in</option>
+                  <option>Fachperson / Organisation</option>
+                  <option>Sonstiges</option>
+                </select>
+              </label>
 
-            <button type="submit" class="btn btn-outline">Vorschlag senden</button>
-          </form>
+              <label>
+                Hinweise an uns (optional)
+                <textarea
+                  name="Hinweise"
+                  placeholder="Alles, was für die Prüfung des Angebots noch wichtig ist."
+                ></textarea>
+              </label>
 
-          <p style="margin-top: 1.25rem; font-size: 0.82rem; color: #6b7280;">
-            Mit dem Absenden wird eine E-Mail an <strong>kontakt@dererste-schritt.de</strong>
-            erstellt. Es werden keine Daten in dieser Website gespeichert.
-          </p>
+              <p class="form-hint-email">
+                Wenn du auf „Gruppe per E-Mail vorschlagen“ klickst, öffnet sich dein Mailprogramm mit
+                einer fertig ausgefüllten Nachricht. Du kannst den Text noch einmal prüfen und dann
+                selbst verschicken.
+              </p>
+
+              <button type="submit" class="btn btn-filled">
+                Gruppe per E-Mail vorschlagen
+              </button>
+
+              <p class="form-note">
+                Mit dem Absenden erklärst du, dass du die Angaben nach bestem Wissen gemacht hast.
+                Es werden keine Logins oder Tracker verwendet. Die Daten werden nur genutzt,
+                um das Verzeichnis zu aktualisieren.
+              </p>
+            </form>
+          </div>
         </div>
       </section>
     </main>
 
+
+    <!-- Footer wie auf den anderen Seiten -->
     <footer class="site-footer">
-      <div class="container footer-top">
-        <div class="footer-col footer-col-main">
-          <h3>Der erste Schritt</h3>
-          <p>
-            Ein öffentliches Verzeichnis für Selbsthilfegruppen und Beratungsangebote zu Sucht und
-            psychischer Gesundheit in Berlin.
-          </p>
+      <div class="footer-top">
+        <div class="container footer-grid">
+          <div class="footer-column">
+            <h3 class="footer-heading">Der erste Schritt</h3>
+            <p>
+              Ein öffentliches Verzeichnis für Selbsthilfegruppen und Beratungsangebote
+              zu Sucht und psychischer Gesundheit in Berlin. Anonym, kostenlos und ohne Anmeldung.
+            </p>
+            <p class="footer-support-hint">
+              Kein Ersatz für professionelle Therapie. In akuten Krisen wende dich bitte an den Notruf 112
+              oder den Berliner Krisendienst.
+            </p>
+          </div>
 
-          <h4>Unterstützen</h4>
-          <p>Helfen Sie uns, dieses Projekt zu erhalten und auszubauen.</p>
-          <a href="about_support.html" class="footer-link">Jetzt spenden</a>
-        </div>
+          <div class="footer-column">
+            <h3 class="footer-heading">Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Startseite</a></li>
+              <li><a href="browse.html">Angebote finden</a></li>
+              <li><a href="suggestion.html">Gruppe vorschlagen</a></li>
+              <li><a href="about_support.html">Über uns</a></li>
+              <li><a href="spenden.html">Jetzt spenden</a></li>
+            </ul>
+          </div>
 
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="browse.html">Angebote finden</a></li>
-            <li><a href="suggestion.html">Gruppe vorschlagen</a></li>
-            <li><a href="about_support.html">Über uns &amp; Unterstützen</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="#">Impressum</a></li>
-            <li><a href="#">Datenschutzerklärung</a></li>
-          </ul>
+          <div class="footer-column">
+            <h3 class="footer-heading">Rechtliches</h3>
+            <ul class="footer-links">
+              <li><a href="impressum.html">Impressum</a></li>
+              <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="container footer-bottom">
-        <p>© 2025 Der erste Schritt. Alle Rechte vorbehalten.</p>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© 2025 Der erste Schritt</p>
+        </div>
       </div>
     </footer>
   </body>

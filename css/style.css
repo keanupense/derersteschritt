@@ -551,6 +551,26 @@ img {
   }
 }
 
+.filter-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+  flex-basis: 100%;
+}
+
+.filter-actions .btn {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 900px) {
+  .filter-actions {
+    flex-direction: column;
+  }
+
+  .filter-actions .btn {
+    width: 100%;
+  }
+}
 
 /* Filterboxen (bauen auf deinem .filters-Block auf) */
 .filter-field {
@@ -835,6 +855,257 @@ textarea {
 @media (max-width: 900px) {
   .suggest-card {
     padding: 1.5rem 1.3rem 1.8rem;
+  }
+}
+/* ---------- Über-uns-Seite ---------- */
+
+.about-hero {
+  background: #e4f3ef;  /* gleiches Grün wie Spenden/Browse/Suggest */
+  padding: 3.2rem 0 3rem;
+}
+
+.about-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem;
+  color: #111827;
+}
+
+.about-hero-text {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #1f2933;
+}
+
+/* Abschnitt mit den drei Info-Karten */
+.about-section {
+  background: #ffffff;
+  padding: 3rem 0 3.2rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 1.1rem;
+  padding: 1.4rem 1.6rem 1.5rem;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+}
+
+.about-card h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: #4b5563;
+}
+
+/* Abschnitt: Wer steckt dahinter / Kontakt */
+.about-meta {
+  background: #f9fafb;
+  padding: 3rem 0 3.4rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.about-meta-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1.3fr;
+  gap: 2.5rem;
+}
+
+.about-meta h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+}
+
+.about-meta p {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.about-contact a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.about-contact a:hover {
+  text-decoration: underline;
+}
+
+/* responsive Layout-Anpassungen */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-meta-inner {
+    grid-template-columns: 1fr;
+  }
+}
+/* ---------- Impressum / Rechtliches ---------- */
+
+.legal-hero {
+  background: #e4f3ef;  /* gleiches Grün wie bei den anderen Unterseiten */
+  padding: 3.2rem 0 3rem;
+}
+
+.legal-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.legal-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem;
+  color: #111827;
+}
+
+.legal-hero-text {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #1f2933;
+}
+
+.legal-section {
+  background: #ffffff;
+  padding: 3rem 0 3.6rem;
+}
+
+.legal-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legal-inner h2 {
+  font-size: 1.2rem;
+  margin: 1.8rem 0 0.6rem;
+}
+
+.legal-inner h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-inner p {
+  font-size: 0.94rem;
+  color: #374151;
+  margin: 0 0 0.7rem;
+}
+
+.legal-inner a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.legal-inner a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .legal-hero {
+    padding: 2.8rem 0 2.5rem;
+  }
+
+  .legal-hero h1 {
+    font-size: 2rem;
+  }
+}
+/* ---------- Datenschutzerklärung ---------- */
+
+.privacy-hero {
+  background: #e4f3ef;  /* gleiches Grün wie Impressum/Spenden/Browse */
+  padding: 3.2rem 0 3rem;
+}
+
+.privacy-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.privacy-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 1rem;
+  color: #111827;
+}
+
+.privacy-hero-text {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #1f2933;
+}
+
+.privacy-section {
+  background: #ffffff;
+  padding: 3rem 0 3.6rem;
+}
+
+.privacy-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.privacy-inner h2 {
+  font-size: 1.2rem;
+  margin: 1.8rem 0 0.6rem;
+}
+
+.privacy-inner h2:first-of-type {
+  margin-top: 0;
+}
+
+.privacy-inner p {
+  font-size: 0.94rem;
+  color: #374151;
+  margin: 0 0 0.7rem;
+}
+
+.privacy-inner ul {
+  margin: 0.3rem 0 0.8rem 1.2rem;
+  font-size: 0.94rem;
+  color: #374151;
+}
+
+.privacy-inner a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.privacy-inner a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .privacy-hero {
+    padding: 2.8rem 0 2.5rem;
+  }
+
+  .privacy-hero h1 {
+    font-size: 2rem;
   }
 }
 

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <!-- Gleicher Header wie auf allen Seiten -->
+    <!-- Header wie auf allen Seiten -->
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
@@ -24,214 +24,175 @@
       </div>
     </header>
 
-      <main>
-    <!-- Hero-Bereich oben -->
-    <section class="group-hero">
-      <div class="container group-hero-inner">
-        <h1>Finde eine Gruppe in Berlin</h1>
-        <p class="group-hero-text">
-          Nutze die Filter, um Selbsthilfegruppen und Beratungsstellen zu finden, die zu deiner Situation
-          passen. Alle Angaben ohne Gewähr – informiere dich im Zweifel direkt bei der Gruppe.
-        </p>
-      </div>
-    </section>
+    <main>
+      <!-- Hero-Bereich oben -->
+      <section class="group-hero">
+        <div class="container group-hero-inner">
+          <h1>Finde Unterstützung in Berlin</h1>
+          <p class="group-hero-text">
+            Nutze die Filter, um Selbsthilfegruppen und Beratungsstellen zu finden, die zu deiner
+            Situation passen. Alle Angaben ohne Gewähr – informiere dich im Zweifel direkt bei der
+            Gruppe oder Beratungsstelle.
+          </p>
+        </div>
+      </section>
 
-    <!-- Such- / Filterbereich (grauer Hintergrund) -->
-    <section class="group-section">
-      <div class="container">
-        <div class="filters">
-          <!-- 1. Nach Name suchen -->
-          <div class="filter-field" style="flex: 1 1 100%;">
-            <label for="searchName">Nach Name suchen</label>
-            <input
-              type="text"
-              id="searchName"
-              placeholder="z. B. AA Kreuzberg"
-            />
-          </div>
-
-          <!-- 2. Themen (Mehrfachauswahl als Pills) -->
-          <div class="filter-field" style="flex: 1 1 100%;">
-            <label>Themen</label>
-            <div class="topic-checkboxes">
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Alkoholsucht" />
-                Alkoholsucht
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Cannabis" />
-                Cannabis
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Drogen / Substanzen" />
-                Drogen / Substanzen
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Glücksspiel" />
-                Glücksspielsucht
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Depression" />
-                Depression
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Angst / Panik" />
-                Angst / Panik
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Trauma" />
-                Trauma
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Essstörung" />
-                Essstörung
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Angehörige" />
-                Angehörige
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Sonstiges" />
-                Sonstige Themen
-              </label>
+      <!-- Filter-Bereich -->
+      <section class="group-section">
+        <div class="container">
+          <form id="filters-form" class="filters">
+            <!-- Themen-Auswahl als Chips -->
+            <div class="filter-field">
+              <label>Themen</label>
+              <div class="topic-checkboxes">
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Alkoholsucht" />
+                  <span>Alkoholsucht</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Cannabis" />
+                  <span>Cannabis</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Drogen / Substanzen" />
+                  <span>Drogen / Substanzen</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Glücksspielsucht" />
+                  <span>Glücksspielsucht</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Depression" />
+                  <span>Depression</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Angst / Panik" />
+                  <span>Angst / Panik</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Trauma" />
+                  <span>Trauma</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Essstörung" />
+                  <span>Essstörung</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="topics" value="Sonstige Themen" />
+                  <span>Sonstige Themen</span>
+                </label>
+              </div>
+              <p class="filter-hint">Du kannst mehrere Themen auswählen.</p>
             </div>
-          </div>
 
-          <!-- 3. Bezirke (Mehrfachauswahl als Pills, alphabetisch) -->
-          <div class="filter-field" style="flex: 1 1 100%;">
-            <label>Bezirke</label>
-            <div class="district-checkboxes">
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Charlottenburg-Wilmersdorf" />
-                Charlottenburg-Wilmersdorf
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Friedrichshain-Kreuzberg" />
-                Friedrichshain-Kreuzberg
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Lichtenberg" />
-                Lichtenberg
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Marzahn-Hellersdorf" />
-                Marzahn-Hellersdorf
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Mitte" />
-                Mitte
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Neukölln" />
-                Neukölln
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Pankow" />
-                Pankow
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Reinickendorf" />
-                Reinickendorf
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Spandau" />
-                Spandau
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Steglitz-Zehlendorf" />
-                Steglitz-Zehlendorf
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Tempelhof-Schöneberg" />
-                Tempelhof-Schöneberg
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Treptow-Köpenick" />
-                Treptow-Köpenick
-              </label>
+            <!-- Bezirke als Chips -->
+            <div class="filter-field">
+              <label>Bezirke</label>
+              <div class="district-checkboxes">
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Charlottenburg-Wilmersdorf" />
+                  <span>Charlottenburg-Wilmersdorf</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Friedrichshain-Kreuzberg" />
+                  <span>Friedrichshain-Kreuzberg</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Lichtenberg" />
+                  <span>Lichtenberg</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Marzahn-Hellersdorf" />
+                  <span>Marzahn-Hellersdorf</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Mitte" />
+                  <span>Mitte</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Neukölln" />
+                  <span>Neukölln</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Pankow" />
+                  <span>Pankow</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Reinickendorf" />
+                  <span>Reinickendorf</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Spandau" />
+                  <span>Spandau</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Steglitz-Zehlendorf" />
+                  <span>Steglitz-Zehlendorf</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Tempelhof-Schöneberg" />
+                  <span>Tempelhof-Schöneberg</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="districts" value="Treptow-Köpenick" />
+                  <span>Treptow-Köpenick</span>
+                </label>
+              </div>
+              <p class="filter-hint">Du kannst auch mehrere Bezirke kombinieren.</p>
             </div>
-            <p class="filter-help">Du kannst mehrere Bezirke auswählen.</p>
-          </div>
 
-          <!-- 4. Art des Angebots (Mehrfachauswahl als Pills) -->
-          <div class="filter-field" style="flex: 1 1 100%;">
-            <label>Art des Angebots</label>
-            <div class="type-checkboxes">
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Selbsthilfegruppe" />
-                Selbsthilfegruppe
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Beratungsstelle" />
-                Beratungsstelle
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Klinik" />
-                Klinik
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Online-Gruppe" />
-                Online-Gruppe
-              </label>
-              <label class="checkbox-pill">
-                <input type="checkbox" value="Hotline / Krisendienst" />
-                Hotline / Krisendienst
-              </label>
+            <!-- Art des Angebots als Chips -->
+            <div class="filter-field">
+              <label>Art des Angebots</label>
+              <div class="type-checkboxes">
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="types" value="Selbsthilfegruppe" />
+                  <span>Selbsthilfegruppe</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="types" value="Beratungsstelle" />
+                  <span>Beratungsstelle</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="types" value="Klinik" />
+                  <span>Klinik</span>
+                </label>
+                <label class="checkbox-pill">
+                  <input type="checkbox" name="types" value="Online-Angebot" />
+                  <span>Online-Angebot</span>
+                </label>
+              </div>
+              <p class="filter-hint">Wenn du nichts auswählst, werden alle Arten berücksichtigt.</p>
             </div>
+
+            <!-- Buttons -->
+            <div class="filter-actions">
+              <button type="button" id="apply-filters" class="btn btn-filled">
+                Ergebnisse anzeigen
+              </button>
+              <button type="button" id="reset-filters" class="btn btn-outline">
+                Filter zurücksetzen
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Ergebnis-Bereich -->
+      <section class="group-results">
+        <div class="container">
+          <h2>Verfügbare Angebote</h2>
+
+          <p id="group-empty" class="group-empty">
+            Wähl oben Filter aus, um passende Gruppen in Berlin zu sehen.
+          </p>
+
+          <div id="group-list" class="group-list">
+            <!-- Karten werden per JavaScript eingefügt -->
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Ergebnisbereich mit hellgrünem Hintergrund -->
-    <section class="group-results">
-      <div class="container">
-        <h2>Verfügbare Angebote</h2>
-
-        <div id="groupList" class="group-list">
-          <!-- 3 Beispiel-Gruppen als Platzhalter -->
-          <article class="group-card">
-            <h3>AA Kreuzberg</h3>
-            <p><strong>Art:</strong> Selbsthilfegruppe</p>
-            <p><strong>Bezirk:</strong> Friedrichshain-Kreuzberg</p>
-            <p><strong>Thema:</strong> Alkoholsucht</p>
-            <p>
-              Offene Gruppe für Menschen, die mit Alkoholabhängigkeit kämpfen und einen sicheren Raum
-              für Austausch suchen.
-            </p>
-            <a href="#">Mehr erfahren</a>
-          </article>
-
-          <article class="group-card">
-            <h3>Cannabisgruppe Neukölln</h3>
-            <p><strong>Art:</strong> Selbsthilfegruppe</p>
-            <p><strong>Bezirk:</strong> Neukölln</p>
-            <p><strong>Thema:</strong> Cannabis</p>
-            <p>
-              Wöchentliche Gruppe für Menschen, die ihren Cannabiskonsum reduzieren oder beenden möchten.
-            </p>
-            <a href="#">Mehr erfahren</a>
-          </article>
-
-          <article class="group-card">
-            <h3>Depressionsgruppe Mitte</h3>
-            <p><strong>Art:</strong> Beratungsstelle</p>
-            <p><strong>Bezirk:</strong> Mitte</p>
-            <p><strong>Thema:</strong> Depression</p>
-            <p>
-              Beratungsangebot mit festen Terminen und moderierten Gesprächsgruppen im Herzen von Berlin.
-            </p>
-            <a href="#">Mehr erfahren</a>
-          </article>
-        </div>
-
-        <p id="groupEmpty" class="group-empty" hidden>
-          Es sind noch keine Gruppen eingetragen.
-        </p>
-      </div>
-    </section>
-  </main>
-
+      </section>
+    </main>
 
     <!-- Footer wie auf den anderen Seiten -->
     <footer class="site-footer">
@@ -277,8 +238,7 @@
       </div>
     </footer>
 
-    <!-- Daten & Logik -->
-    <script src="data/groups.js"></script>
-    <script src="js/app.js"></script>
+    <!-- JavaScript für Filter & Ergebnisse -->
+    <script src="groups.js"></script>
   </body>
 </html>

@@ -181,29 +181,42 @@ function resetFilters() {
 
 // Event-Listener setzen, sobald DOM geladen ist
 document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("filters-form");
   const applyBtn = document.getElementById("apply-filters");
   const resetBtn = document.getElementById("reset-filters");
 
-  if (!applyBtn || !resetBtn) {
-    // Falls wir auf einer anderen Seite sind (z.B. Startseite), nichts tun
+  // Wenn wir nicht auf der browse-Seite sind, einfach nichts tun
+  if (!form && !applyBtn) {
     return;
   }
 
-  // Wenn du auf "Ergebnisse anzeigen" klickst → Filter anwenden
-  applyBtn.addEventListener("click", () => {
-    applyFilters();
-  });
+  // Variante A: über Formular-Submit (deine aktuelle Struktur)
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      applyFilters();
+    });
+  }
 
-  // Optional: schon beim Anklicken der Chips filtern
+  // Variante B: falls du später einen eigenen Button mit id="apply-filters" hast
+  if (applyBtn) {
+    applyBtn.addEventListener("click", () => {
+      applyFilters();
+    });
+  }
+
+  // Schon beim Anklicken der Chips filtern (Thema, Bezirk, Art)
   document
     .querySelectorAll('input[name="topics"], input[name="districts"], input[name="types"]')
     .forEach((el) => el.addEventListener("change", applyFilters));
 
-  // Filter zurücksetzen
-  resetBtn.addEventListener("click", () => {
-    resetFilters();
-  });
+  // Reset-Button
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      resetFilters();
+    });
+  }
 
-  // Initialer Zustand
+  // Startzustand: alles leer, nur Hinweistext
   resetFilters();
 });

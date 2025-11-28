@@ -1108,4 +1108,48 @@ textarea {
     font-size: 2rem;
   }
 }
+/* ---------- Mobile-Optimierungen ---------- */
+@media (max-width: 768px) {
+  /* Header: Logo oben, Navigation darunter, alles entspannter */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .brand {
+    text-align: center;
+  }
+
+  .main-nav {
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem 1.2rem;
+  }
+
+  /* Startseiten-Kacheln: untereinander statt nebeneinander */
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-card {
+    padding: 1.2rem 1.1rem 1.3rem;
+  }
+
+  /* Hero-Bereich etwas luftiger & bessere Schriftgrößen auf Handy */
+  .landing-hero {
+    padding: 3rem 0 3.2rem;
+  }
+
+  .landing-hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    padding: 0 0.75rem;
+  }
+}
 
